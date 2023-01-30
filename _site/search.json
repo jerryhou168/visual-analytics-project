@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "guide.html",
+    "href": "guide.html",
+    "title": "User Guide",
+    "section": "",
+    "text": "User Guide"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ISSS608-VAA-Project",
+    "section": "",
+    "text": "ISSS608-Visual Analytics and Applications Project"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "INTRODUCTION",
+    "section": "",
+    "text": "INTRODUCTION"
+  },
+  {
+    "objectID": "poster.html",
+    "href": "poster.html",
+    "title": "Poster",
+    "section": "",
+    "text": "Poster"
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "PROPOSAL",
+    "section": "",
+    "text": "PROPOSAL"
+  },
+  {
+    "objectID": "rshiny.html",
+    "href": "rshiny.html",
+    "title": "RSHINY APP",
+    "section": "",
+    "text": "RSHINY APP"
+  }
+]

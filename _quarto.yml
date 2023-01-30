@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "ISSS608-VAA-Project"
+  navbar:
+    background: primary
+    search: true
+    right:
+      - href: index.qmd
+        text: HOME
+      - href: intro.qmd
+        text: INTRODUCTION
+      - href: proposal.qmd
+        text: PROPOSAL
+      - href: rshiny.qmd
+        text: RSHINY APP
+      - href: poster.qmd
+        text: POSTER
+
+format:
+  html:
+    theme: Litera
+    css: styles.css
+    toc: true
+
+editor: visual
+
