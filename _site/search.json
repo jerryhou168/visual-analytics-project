@@ -32,28 +32,28 @@
     "href": "proposal.html",
     "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
     "section": "",
-    "text": "Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques."
+    "text": "Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.\nTo manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers.\nOver the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques."
   },
   {
     "objectID": "proposal.html#exploratory-data-analysis-eda",
     "href": "proposal.html#exploratory-data-analysis-eda",
     "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
     "section": "Exploratory data analysis (EDA)",
-    "text": "Exploratory data analysis (EDA)"
+    "text": "Exploratory data analysis (EDA)\nWe will build an application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data. Another tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median). A deviation analysis would also show outliers from dataset.\nWe also include scatterplot to present the correlation between different variables and their corresponding correlation coefficients.\n\n\n\nPrototype slide 1\n\n\nIn terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later."
   },
   {
     "objectID": "proposal.html#deeper-analysis",
     "href": "proposal.html#deeper-analysis",
     "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
     "section": "Deeper analysis",
-    "text": "Deeper analysis"
+    "text": "Deeper analysis\n\n\n\nPrototype slide 2\n\n\nUsers can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models"
   },
   {
     "objectID": "proposal.html#loan-default-prediction-using-classification-algorithms",
     "href": "proposal.html#loan-default-prediction-using-classification-algorithms",
     "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
     "section": "Loan default prediction using classification algorithms",
-    "text": "Loan default prediction using classification algorithms"
+    "text": "Loan default prediction using classification algorithms\n\n\n\nPrototype slide 3\n\n\nFor the 2nd part of the prototype, we can allow users to select between different resampling methods, to see the effects of whether oversampling versus undersampling versus original data.\nUsers also can select different classification models, and our applications will showcase the results of the models using AOC analysis for training dataset and validation dataset.\nBased on the results of the previous multi correlated analysis, users can choose to include or exclude the highly correlated variables before building the models."
   },
   {
     "objectID": "rshiny.html",

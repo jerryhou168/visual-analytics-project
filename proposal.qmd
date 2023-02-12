@@ -17,23 +17,60 @@ editor: visual
 
 # Background
 
-Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.
+Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.
+
+To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers.
+
+Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.
+
+# Motivation
+
+This project aims to explore R technologies to develop reusable solutions (such as R-shiny application) to support users to perform data exploration, analysis, and prediction from set of customer variables to select the optimal variables to perform the customer loan default prediction.
 
 # Data
 
-The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction. Assessing the risk of loan default is a crucial aspect of loan lending, which is a vital financial service. The ability and willingness of the borrower to repay the loan are key factors in the lending process. This assessment can have an effect on the profitability of financial institutions if the borrower is unable to repay the loan as planned. Here in this case study, a digital lending company in Nigeria: "Super Lender" , are building a model that will be able to predict if a loan was good or bad (binary outcome).
+The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction.
 
-There are two types of risk models in general: new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies. The second is a repeat or behaviour risk model, in which case the customer has been a client and applies for a repeat loan. In the latter case - we will have additional performance on how he/she repaid their prior loans, which we can incorporate into our risk model. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loan per customer in the data.
+There are two types of risk models in general:
 
-# Objectives
-This project aims to explore and determine the optimal visual analytics technique in R to develop reusable solutions (such as R-shiny application) to perform data analysis to gain deep insight on data and perform necessary data sampling for imbalanced data.
-This project also provides prediction analysis for customer loan default prediction with classification algorithms from R for end-users to analysis the optimal factors in loan default prediction, users can evaluate different classification models with different variables to figure out the optimal model and variables to deploy for business needs. 
+-   1st new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies.
 
+-   2nd repeat or behavior risk model, in which case the customer has been a client and applies for a repeat loan. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loans per customer in the data.
+
+# Methodology
+
+Visual Analytics
+
+User Interaction
+
+Data Mining
+
+Mode Building and Model Visualisation
 
 # Prototype
 
 ## Exploratory data analysis (EDA)
 
+We will build an application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data. Another tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median). A deviation analysis would also show outliers from dataset.
+
+We also include scatterplot to present the correlation between different variables and their corresponding correlation coefficients.
+
+![Prototype slide 1](images/Slide1.png)
+
+In terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later.
+
 ## Deeper analysis
 
+![Prototype slide 2](images/Slide2.png)
+
+Users can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models
+
 ## Loan default prediction using classification algorithms
+
+![Prototype slide 3](images/Slide3.png)
+
+For the 2nd part of the prototype, we can allow users to select between different resampling methods, to see the effects of whether oversampling versus undersampling versus original data.
+
+Users also can select different classification models, and our applications will showcase the results of the models using AOC analysis for training dataset and validation dataset.
+
+Based on the results of the previous multi correlated analysis, users can choose to include or exclude the highly correlated variables before building the models.

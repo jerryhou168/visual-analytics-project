@@ -180,8 +180,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#prototype" id="toc-prototype" class="nav-link" data-scroll-target="#prototype">Prototype</a>
   <ul class="collapse">
   <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">Exploratory data analysis (EDA)</a></li>
@@ -231,27 +232,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="background" class="level1">
 <h1>Background</h1>
-<p>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.</p>
+<p>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.</p>
+<p>To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers.</p>
+<p>Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.</p>
+</section>
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
+<p>This project aims to explore R technologies to develop reusable solutions (such as R-shiny application) to support users to perform data exploration, analysis, and prediction from set of customer variables to select the optimal variables to perform the customer loan default prediction.</p>
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
-<p>The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction. Assessing the risk of loan default is a crucial aspect of loan lending, which is a vital financial service. The ability and willingness of the borrower to repay the loan are key factors in the lending process. This assessment can have an effect on the profitability of financial institutions if the borrower is unable to repay the loan as planned. Here in this case study, a digital lending company in Nigeria: “Super Lender” , are building a model that will be able to predict if a loan was good or bad (binary outcome).</p>
-<p>There are two types of risk models in general: new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies. The second is a repeat or behaviour risk model, in which case the customer has been a client and applies for a repeat loan. In the latter case - we will have additional performance on how he/she repaid their prior loans, which we can incorporate into our risk model. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loan per customer in the data.</p>
+<p>The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction.</p>
+<p>There are two types of risk models in general:</p>
+<ul>
+<li><p>1st new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies.</p></li>
+<li><p>2nd repeat or behavior risk model, in which case the customer has been a client and applies for a repeat loan. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loans per customer in the data.</p></li>
+</ul>
 </section>
-<section id="objectives" class="level1">
-<h1>Objectives</h1>
-<p>This project aims to explore and determine the optimal visual analytics technique in R to develop reusable solutions (such as R-shiny application) to perform data analysis to gain deep insight on data and perform necessary data sampling for imbalanced data. This project also provides prediction analysis for customer loan default prediction with classification algorithms from R for end-users to analysis the optimal factors in loan default prediction, users can evaluate different classification models with different variables to figure out the optimal model and variables to deploy for business needs.</p>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<p>Visual Analytics</p>
+<p>User Interaction</p>
+<p>Data Mining</p>
+<p>Mode Building and Model Visualisation</p>
 </section>
 <section id="prototype" class="level1">
 <h1>Prototype</h1>
 <section id="exploratory-data-analysis-eda" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory data analysis (EDA)</h2>
+<p>We will build an application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data. Another tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median). A deviation analysis would also show outliers from dataset.</p>
+<p>We also include scatterplot to present the correlation between different variables and their corresponding correlation coefficients.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Slide1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Prototype slide 1</figcaption><p></p>
+</figure>
+</div>
+<p>In terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later.</p>
 </section>
 <section id="deeper-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="deeper-analysis">Deeper analysis</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Slide2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Prototype slide 2</figcaption><p></p>
+</figure>
+</div>
+<p>Users can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models</p>
 </section>
 <section id="loan-default-prediction-using-classification-algorithms" class="level2">
 <h2 class="anchored" data-anchor-id="loan-default-prediction-using-classification-algorithms">Loan default prediction using classification algorithms</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Slide3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Prototype slide 3</figcaption><p></p>
+</figure>
+</div>
+<p>For the 2nd part of the prototype, we can allow users to select between different resampling methods, to see the effects of whether oversampling versus undersampling versus original data.</p>
+<p>Users also can select different classification models, and our applications will showcase the results of the models using AOC analysis for training dataset and validation dataset.</p>
+<p>Based on the results of the previous multi correlated analysis, users can choose to include or exclude the highly correlated variables before building the models.</p>
 
 
 <!-- -->
@@ -463,26 +502,63 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># Background</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers.</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction. Assessing the risk of loan default is a crucial aspect of loan lending, which is a vital financial service. The ability and willingness of the borrower to repay the loan are key factors in the lending process. This assessment can have an effect on the profitability of financial institutions if the borrower is unable to repay the loan as planned. Here in this case study, a digital lending company in Nigeria: "Super Lender" , are building a model that will be able to predict if a loan was good or bad (binary outcome).</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>There are two types of risk models in general: new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies. The second is a repeat or behaviour risk model, in which case the customer has been a client and applies for a repeat loan. In the latter case - we will have additional performance on how he/she repaid their prior loans, which we can incorporate into our risk model. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loan per customer in the data.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu"># Motivation</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objectives</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>This project aims to explore and determine the optimal visual analytics technique in R to develop reusable solutions (such as R-shiny application) to perform data analysis to gain deep insight on data and perform necessary data sampling for imbalanced data.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>This project also provides prediction analysis for customer loan default prediction with classification algorithms from R for end-users to analysis the optimal factors in loan default prediction, users can evaluate different classification models with different variables to figure out the optimal model and variables to deploy for business needs. </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This project aims to explore R technologies to develop reusable solutions (such as R-shiny application) to support users to perform data exploration, analysis, and prediction from set of customer variables to select the optimal variables to perform the customer loan default prediction.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prototype</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exploratory data analysis (EDA)</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deeper analysis</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loan default prediction using classification algorithms</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>There are two types of risk models in general:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>1st new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>2nd repeat or behavior risk model, in which case the customer has been a client and applies for a repeat loan. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loans per customer in the data.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu"># Methodology</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Visual Analytics</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>User Interaction</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Data Mining</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Mode Building and Model Visualisation</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prototype</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exploratory data analysis (EDA)</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>We will build an application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data. Another tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median). A deviation analysis would also show outliers from dataset.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>We also include scatterplot to present the correlation between different variables and their corresponding correlation coefficients.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="al">![Prototype slide 1](images/Slide1.png)</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>In terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deeper analysis</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="al">![Prototype slide 2](images/Slide2.png)</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Users can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loan default prediction using classification algorithms</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="al">![Prototype slide 3](images/Slide3.png)</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>For the 2nd part of the prototype, we can allow users to select between different resampling methods, to see the effects of whether oversampling versus undersampling versus original data.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Users also can select different classification models, and our applications will showcase the results of the models using AOC analysis for training dataset and validation dataset.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Based on the results of the previous multi correlated analysis, users can choose to include or exclude the highly correlated variables before building the models.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
