@@ -10,7 +10,7 @@ execute:
 format: 
   html:
     code-fold: false
-    code-tools: true
+    code-tools: false
 linestretch: 3
 editor: visual
 ---

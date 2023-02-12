@@ -1,6 +1,14 @@
 ---
 title: "ISSS608-VAA-Project"
+title-block-style: plain
+format: 
+  html:
+    code-fold: false
+    code-tools: false
+linestretch: 3
+editor: visual
 ---
 
-ISSS608-Visual Analytics and Applications Project
+[***Loan Default Prediction Challenge***](https://zindi.africa/competitions/data-science-nigeria-challenge-1-loan-default-prediction/){.external target="_blank"}
 
+Customer loan default prediction through data exploration, analysis, mining and prediction using advanced R technology
