@@ -37,40 +37,48 @@ There are two types of risk models in general:
 
 -   2nd repeat or behavior risk model, in which case the customer has been a client and applies for a repeat loan. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loans per customer in the data.
 
-# Methodology
+# Approach
 
-Visual Analytics
+To effectively predict the customer loan default, this study aims to provide following approaches to explore, analysis, mining factors are important to evaluate loan default.
 
-User Interaction
+Loan default factor exploration: it provides visualization on all or selected factors, to allow users to understand the trends of the variables, correlation of variables between each other.
 
-Data Mining
+Loan default factor mining: it provides deep dive analysis for customer further analysis the importance of loan default factors for prediction.
 
-Mode Building and Model Visualisation
+Loan default prediction: it provides interfaces for users to select variables, sampling methods, and predictive algorithms to model and analyze factors for customer loan default prediction.
 
-# Prototype
+# R-Shiny App
 
-## Exploratory data analysis (EDA)
+## Customer loan default factors exploration
 
-We will build an application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data. Another tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median). A deviation analysis would also show outliers from dataset.
+The application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data.
 
-We also include scatterplot to present the correlation between different variables and their corresponding correlation coefficients.
+Another tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median).
+
+A deviation analysis would also show outliers from dataset.
+
+Scatterplot also provided to present the correlation between different variables and their corresponding correlation coefficients.
 
 ![Prototype slide 1](images/Slide1.png)
 
 In terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later.
 
-## Deeper analysis
+## Customer loan default factors mining
+
+This section provides deep dive analysis on variables relationship between each other, both heatmap plot and mosaic plot are provided for modeling the relationship between continuous variables or categorical variables.
 
 ![Prototype slide 2](images/Slide2.png)
 
 Users can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models
 
-## Loan default prediction using classification algorithms
+## Customer loan default prediction
 
-![Prototype slide 3](images/Slide3.png)
-
-For the 2nd part of the prototype, we can allow users to select between different resampling methods, to see the effects of whether oversampling versus undersampling versus original data.
+Upon analyzed variables suitable for loan default prediction from section 1 and section 2, the section 3 here is provided interactive interface allow users to between different resampling methods, to see the effects of whether oversampling versus under sampling versus original data.
 
 Users also can select different classification models, and our applications will showcase the results of the models using AOC analysis for training dataset and validation dataset.
 
 Based on the results of the previous multi correlated analysis, users can choose to include or exclude the highly correlated variables before building the models.
+
+![Prototype slide 3](images/Slide3.png)
+
+The model will show the comparison results of different variables selected with different methods selected, so that users can decide which variables and method are suite to the business requirement.

@@ -61,5 +61,26 @@
     "title": "RSHINY APP",
     "section": "",
     "text": "RSHINY APP"
+  },
+  {
+    "objectID": "proposal.html#customer-loan-default-factors-exploration",
+    "href": "proposal.html#customer-loan-default-factors-exploration",
+    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "section": "Customer loan default factors exploration",
+    "text": "Customer loan default factors exploration\nThe application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data.\nAnother tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median).\nA deviation analysis would also show outliers from dataset.\nScatterplot also provided to present the correlation between different variables and their corresponding correlation coefficients.\n\n\n\nPrototype slide 1\n\n\nIn terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later."
+  },
+  {
+    "objectID": "proposal.html#customer-loan-default-factors-mining",
+    "href": "proposal.html#customer-loan-default-factors-mining",
+    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "section": "Customer loan default factors mining",
+    "text": "Customer loan default factors mining\nThis section provides deep dive analysis on variables relationship between each other, both heatmap plot and mosaic plot are provided for modeling the relationship between continuous variables or categorical variables.\n\n\n\nPrototype slide 2\n\n\nUsers can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models"
+  },
+  {
+    "objectID": "proposal.html#customer-loan-default-prediction",
+    "href": "proposal.html#customer-loan-default-prediction",
+    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "section": "Customer loan default prediction",
+    "text": "Customer loan default prediction\nUpon analyzed variables suitable for loan default prediction from section 1 and section 2, the section 3 here is provided interactive interface allow users to between different resampling methods, to see the effects of whether oversampling versus under sampling versus original data.\nUsers also can select different classification models, and our applications will showcase the results of the models using AOC analysis for training dataset and validation dataset.\nBased on the results of the previous multi correlated analysis, users can choose to include or exclude the highly correlated variables before building the models.\n\n\n\nPrototype slide 3\n\n\nThe model will show the comparison results of different variables selected with different methods selected, so that users can decide which variables and method are suite to the business requirement."
   }
 ]
