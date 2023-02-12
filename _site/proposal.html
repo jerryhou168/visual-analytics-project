@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Group 5">
+<meta name="author" content="G5 - Hoang Huy, Li Ziyi, Hou Tao">
 <meta name="dcterms.date" content="2023-01-31">
 
-<title>ISSS608-VAA-Project - PROPOSAL</title>
+<title>ISSS608-VAA-Project - R-Shiny Application Project Proposal - Loan Default Prediction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -175,14 +175,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of Contents</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#prototype" id="toc-prototype" class="nav-link" data-scroll-target="#prototype">Prototype</a>
+  <ul class="collapse">
+  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">Exploratory data analysis (EDA)</a></li>
+  <li><a href="#deeper-analysis" id="toc-deeper-analysis" class="nav-link" data-scroll-target="#deeper-analysis">Deeper analysis</a></li>
+  <li><a href="#loan-default-prediction-using-classification-algorithms" id="toc-loan-default-prediction-using-classification-algorithms" class="nav-link" data-scroll-target="#loan-default-prediction-using-classification-algorithms">Loan default prediction using classification algorithms</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">PROPOSAL</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">R-Shiny Application Project Proposal - Loan Default Prediction</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -192,7 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Group 5 </p>
+             <p>G5 - Hoang Huy, Li Ziyi, Hou Tao </p>
           </div>
   </div>
     
@@ -206,7 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 31, 2023</p>
+      <p class="date-modified">February 12, 2023</p>
     </div>
   </div>
     
@@ -215,11 +229,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>PROPOSAL</p>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.</p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction. Assessing the risk of loan default is a crucial aspect of loan lending, which is a vital financial service. The ability and willingness of the borrower to repay the loan are key factors in the lending process. This assessment can have an effect on the profitability of financial institutions if the borrower is unable to repay the loan as planned. Here in this case study, a digital lending company in Nigeria: “Super Lender” , are building a model that will be able to predict if a loan was good or bad (binary outcome).</p>
+<p>There are two types of risk models in general: new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies. The second is a repeat or behaviour risk model, in which case the customer has been a client and applies for a repeat loan. In the latter case - we will have additional performance on how he/she repaid their prior loans, which we can incorporate into our risk model. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loan per customer in the data.</p>
+</section>
+<section id="objectives" class="level1">
+<h1>Objectives</h1>
+<p>This project aims to explore and determine the optimal visual analytics technique in R to develop reusable solutions (such as R-shiny application) to perform data analysis to gain deep insight on data and perform necessary data sampling for imbalanced data. This project also provides prediction analysis for customer loan default prediction with classification algorithms from R for end-users to analysis the optimal factors in loan default prediction, users can evaluate different classification models with different variables to figure out the optimal model and variables to deploy for business needs.</p>
+</section>
+<section id="prototype" class="level1">
+<h1>Prototype</h1>
+<section id="exploratory-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory data analysis (EDA)</h2>
+</section>
+<section id="deeper-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="deeper-analysis">Deeper analysis</h2>
+</section>
+<section id="loan-default-prediction-using-classification-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="loan-default-prediction-using-classification-algorithms">Loan default prediction using classification algorithms</h2>
 
 
 <!-- -->
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -407,8 +445,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "PROPOSAL"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Group 5"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "R-Shiny Application Project Proposal - Loan Default Prediction"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "G5 - Hoang Huy, Li Ziyi, Hou Tao"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "31 Jan 2023"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> "`r Sys.Date()`"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
@@ -423,8 +461,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>PROPOSAL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># Background</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction. Assessing the risk of loan default is a crucial aspect of loan lending, which is a vital financial service. The ability and willingness of the borrower to repay the loan are key factors in the lending process. This assessment can have an effect on the profitability of financial institutions if the borrower is unable to repay the loan as planned. Here in this case study, a digital lending company in Nigeria: "Super Lender" , are building a model that will be able to predict if a loan was good or bad (binary outcome).</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>There are two types of risk models in general: new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies. The second is a repeat or behaviour risk model, in which case the customer has been a client and applies for a repeat loan. In the latter case - we will have additional performance on how he/she repaid their prior loans, which we can incorporate into our risk model. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loan per customer in the data.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objectives</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>This project aims to explore and determine the optimal visual analytics technique in R to develop reusable solutions (such as R-shiny application) to perform data analysis to gain deep insight on data and perform necessary data sampling for imbalanced data.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>This project also provides prediction analysis for customer loan default prediction with classification algorithms from R for end-users to analysis the optimal factors in loan default prediction, users can evaluate different classification models with different variables to figure out the optimal model and variables to deploy for business needs. </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prototype</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exploratory data analysis (EDA)</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deeper analysis</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loan default prediction using classification algorithms</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

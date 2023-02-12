@@ -20,9 +20,10 @@ website:
 
 format:
   html:
-    theme: Litera
+    theme: litera
     css: styles.css
     toc: true
+    toc-title: Table of Contents
 
 editor: visual
 

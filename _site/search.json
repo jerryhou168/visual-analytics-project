@@ -30,9 +30,30 @@
   {
     "objectID": "proposal.html",
     "href": "proposal.html",
-    "title": "PROPOSAL",
+    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
     "section": "",
-    "text": "PROPOSAL"
+    "text": "Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques."
+  },
+  {
+    "objectID": "proposal.html#exploratory-data-analysis-eda",
+    "href": "proposal.html#exploratory-data-analysis-eda",
+    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "section": "Exploratory data analysis (EDA)",
+    "text": "Exploratory data analysis (EDA)"
+  },
+  {
+    "objectID": "proposal.html#deeper-analysis",
+    "href": "proposal.html#deeper-analysis",
+    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "section": "Deeper analysis",
+    "text": "Deeper analysis"
+  },
+  {
+    "objectID": "proposal.html#loan-default-prediction-using-classification-algorithms",
+    "href": "proposal.html#loan-default-prediction-using-classification-algorithms",
+    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "section": "Loan default prediction using classification algorithms",
+    "text": "Loan default prediction using classification algorithms"
   },
   {
     "objectID": "rshiny.html",

@@ -1,6 +1,6 @@
 ---
-title: "PROPOSAL"
-author: "Group 5"
+title: "R-Shiny Application Project Proposal - Loan Default Prediction"
+author: "G5 - Hoang Huy, Li Ziyi, Hou Tao"
 date: "31 Jan 2023"
 date-modified: "`r Sys.Date()`"
 execute: 
@@ -15,5 +15,25 @@ linestretch: 3
 editor: visual
 ---
 
+# Background
 
-PROPOSAL
+Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk. To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers. Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.
+
+# Data
+
+The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction. Assessing the risk of loan default is a crucial aspect of loan lending, which is a vital financial service. The ability and willingness of the borrower to repay the loan are key factors in the lending process. This assessment can have an effect on the profitability of financial institutions if the borrower is unable to repay the loan as planned. Here in this case study, a digital lending company in Nigeria: "Super Lender" , are building a model that will be able to predict if a loan was good or bad (binary outcome).
+
+There are two types of risk models in general: new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies. The second is a repeat or behaviour risk model, in which case the customer has been a client and applies for a repeat loan. In the latter case - we will have additional performance on how he/she repaid their prior loans, which we can incorporate into our risk model. Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loan per customer in the data.
+
+# Objectives
+This project aims to explore and determine the optimal visual analytics technique in R to develop reusable solutions (such as R-shiny application) to perform data analysis to gain deep insight on data and perform necessary data sampling for imbalanced data.
+This project also provides prediction analysis for customer loan default prediction with classification algorithms from R for end-users to analysis the optimal factors in loan default prediction, users can evaluate different classification models with different variables to figure out the optimal model and variables to deploy for business needs. 
+
+
+# Prototype
+
+## Exploratory data analysis (EDA)
+
+## Deeper analysis
+
+## Loan default prediction using classification algorithms
