@@ -17,8 +17,14 @@ editor: visual
 
 ![](images/intro1.jpg)
 
+# Problem
+
 Loan lending is one of the most important financial services. Loan default risk assessment is part of the loan lending process; it does impact the profitability of financial institutions when the loan receiver is unable to pay back on time. Customers' ability to pay back and willingness to pay back are essential considerations in loan lending.
 
-Beside the difficulty of customer loan default prediction in real words, more than often, imbalanced data collected are also have significant impact on customer loan default prediction, imbalanced data can resulted in poor performance with traditional predictive models and evaluation metrics that assume a balanced class distribution.
+# Challenges
+
+Beside the difficulty and accuracy of customer loan default prediction in real words, more than often, imbalanced data collected are also have significant impact on customer loan default prediction, imbalanced data can resulted in poor performance with traditional predictive models and evaluation metrics that assume a balanced class distribution.
+
+# Solutions
 
 In this project, first, two types of loans 1) new and 2) repeating loans together with customer demographics and loan history are used in this study to analyze customers' ability to pay and willingness to pay, and predictive models are provided to evaluate factors selected on compared customer loan default prediction.

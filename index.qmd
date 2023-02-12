@@ -11,4 +11,6 @@ editor: visual
 
 [***Loan Default Prediction Challenge***](https://zindi.africa/competitions/data-science-nigeria-challenge-1-loan-default-prediction/){.external target="_blank"}
 
-Customer loan default prediction through data exploration, analysis, mining and prediction using advanced R technology
+Loan default prediction through data exploration, analysis and prediction using advanced R technologies
+
+Group 5
