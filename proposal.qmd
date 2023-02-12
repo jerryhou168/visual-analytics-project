@@ -11,7 +11,7 @@ format:
   html:
     code-fold: false
     code-tools: true
-linestretch: 3
+linestretch: 1.5
 editor: visual
 ---
 
