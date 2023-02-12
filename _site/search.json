@@ -46,7 +46,7 @@
     "href": "proposal.html#deeper-analysis",
     "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
     "section": "Deeper analysis",
-    "text": "Deeper analysis\nThis section provides deep dive analysis on variables relationship between each other, both heatmap plot and mosaic plot are provided for modeling the relationship between continuous variables or categorical variables.\n\n\n\nPrototype slide 2\n\n\nUsers can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models."
+    "text": "Deeper analysis\nThis section provides deep dive analysis on variables relationship between each other, both heatmap plot and mosaic plot are provided for modeling the relationship between continuous variables or categorical variables.\n\nUsers can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models."
   },
   {
     "objectID": "proposal.html#loan-default-prediction-using-classification-algorithms",

@@ -65,7 +65,7 @@ In terms of multi-collinearity, the results will assist users to identify which 
 
 This section provides deep dive analysis on variables relationship between each other, both heatmap plot and mosaic plot are provided for modeling the relationship between continuous variables or categorical variables.
 
-![Prototype slide 2](images/Slide2.png)
+![](images/Slide2.JPG)
 
 Users can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models.
 
