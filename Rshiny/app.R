@@ -3,8 +3,10 @@ library(tidyverse)
 
 # Datset loading
 newloan_working <- read_csv("data/newloan/New_loan_working_dataset.csv")
+newloan <- read_csv("data/newloan/New_loan_final_dataset.csv")
 
 repeatloan_working <- read_csv("data/repeatloan/Repeat_Loan_working_dataset.csv")
+repeatloan <- read_csv("data/repeatloan/Repeat_Loan_final_dataset.csv")
 
 
 # Define UI for application that draws a histogram
@@ -26,27 +28,18 @@ ui <- fluidPage(
   # Application title
   titlePanel("Loan Default Prediction"),
   # Input selections on the left panel
+
+  # New or repeat loan
   sidebarPanel(
     selectInput(inputId = "LoanType",
                 label = "Select type of loans",
                 choices = c("Single loan" = "SINGLE LOAN",
                             "Repeat loans" = "REPEAT LOANS"),
                 selected = "SINGLE LOAN"),
+  # Allow selection of variables from the chosen loan's dataset    
     uiOutput(outputId = "Variables"),
-    # selectInput(inputId = "Variables",
-    #             label = "Select variables from below for distribution analysis",
-    #             choices = c("Age",
-    #                         "Bank account type",
-    #                         "Employment status",
-    #                         "Loan amount"),
-    #             multiple = TRUE),
-    selectInput(inputId = "Correlations",
-                label = "Select the pair of variables for correlation analysis",
-                choices = c("Loan term",
-                            "Creation date",
-                            "..."),
-                multiple = TRUE),
-    
+    uiOutput(outputId = "Correlations"),
+
     sliderInput(inputId = "yearSlider",
                 label = "Year",
                 min = 2017,
@@ -73,9 +66,9 @@ ui <- fluidPage(
 server <- function(input, output) {
   data <- reactive({
     if (input$LoanType == "SINGLE LOAN") {
-      return(newloan_working)
+      return(newloan)
     } else if (input$LoanType == "REPEAT LOANS") {
-      return(repeatloan_working)
+      return(repeatloan)
     }
   })
   
@@ -85,12 +78,28 @@ server <- function(input, output) {
                 choices = names(data()),
                 multiple = TRUE)
   })
-  # Define server logic required to draw a histogram
+  output$Correlations <- renderUI({
+    selectInput(inputId = "Correlations",
+                label = "Select the pair of variables for correlation analysis",
+                choices = names(data()),
+                multiple = TRUE)
+  })
+  
+  
+  
+  
+  # [CORRECTION NEEDED. NOT VERY SURE HOW TO HANDLE THIS PART]
+  # Define server logic required to draw histogram and correlation plot
   output$correlationplot <- renderPlot({
     # plot code to be input
   })
   output$histogram <- renderPlot({
-    # plot code to be input
+    if(!is.null(input$Variable)) {
+      hist_data_numeric <- as.numeric(data()[input$Variable]) 
+      ggplot(hist_data,
+           aes(x = hist_data_numeric)) +
+        geom_histogram() +
+        labs(title = "Distribution of Selected Variables")}
   })
 }
 
