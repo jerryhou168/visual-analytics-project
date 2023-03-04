@@ -1,6 +1,12 @@
 library(shiny)
 library(tidyverse)
 
+# Datset loading
+newloan_working <- read_csv("data/newloan/New_loan_working_dataset.csv")
+
+repeatloan_working <- read_csv("data/repeatloan/Repeat_Loan_working_dataset.csv")
+
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   # CSS style rules to customise tab formatting usage
@@ -26,13 +32,14 @@ ui <- fluidPage(
                 choices = c("Single loan" = "SINGLE LOAN",
                             "Repeat loans" = "REPEAT LOANS"),
                 selected = "SINGLE LOAN"),
-    selectInput(inputId = "Variables",
-                label = "Select variables from below for distribution analysis",
-                choices = c("Age",
-                            "Bank account type",
-                            "Employment status",
-                            "Loan amount"),
-                multiple = TRUE),
+    uiOutput(outputId = "Variables"),
+    # selectInput(inputId = "Variables",
+    #             label = "Select variables from below for distribution analysis",
+    #             choices = c("Age",
+    #                         "Bank account type",
+    #                         "Employment status",
+    #                         "Loan amount"),
+    #             multiple = TRUE),
     selectInput(inputId = "Correlations",
                 label = "Select the pair of variables for correlation analysis",
                 choices = c("Loan term",
@@ -60,10 +67,25 @@ ui <- fluidPage(
     
     # Lower plot
     plotOutput(outputId = "histogram")
-))
+  ))
 
-# Define server logic required to draw a histogram
+# Define server logic required to allow reading of different dataset
 server <- function(input, output) {
+  data <- reactive({
+    if (input$LoanType == "SINGLE LOAN") {
+      return(newloan_working)
+    } else if (input$LoanType == "REPEAT LOANS") {
+      return(repeatloan_working)
+    }
+  })
+  
+  output$Variables <- renderUI({
+    selectInput(inputId = "Variable",
+                label = "Select variables from below for distribution analysis",
+                choices = names(data()),
+                multiple = TRUE)
+  })
+  # Define server logic required to draw a histogram
   output$correlationplot <- renderPlot({
     # plot code to be input
   })
