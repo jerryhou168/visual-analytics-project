@@ -1,5 +1,5 @@
 ---
-title: "R-Shiny Application Project Proposal - Loan Default Prediction"
+title: "Storyboatd - Loan Default Prediction in Nigeria"
 author: "G5 - Hoang Huy, Li Ziyi, Hou Tao"
 date: "31 Jan 2023"
 date-modified: "`r Sys.Date()`"

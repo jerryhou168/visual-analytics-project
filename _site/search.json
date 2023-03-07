@@ -30,28 +30,28 @@
   {
     "objectID": "proposal.html",
     "href": "proposal.html",
-    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "title": "Storyboatd - Loan Default Prediction in Nigeria",
     "section": "",
     "text": "Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.\nTo manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers.\nOver the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques."
   },
   {
     "objectID": "proposal.html#exploratory-data-analysis-eda",
     "href": "proposal.html#exploratory-data-analysis-eda",
-    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "title": "Storyboatd - Loan Default Prediction in Nigeria",
     "section": "Exploratory data analysis (EDA)",
     "text": "Exploratory data analysis (EDA)\nThe application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data.\nAnother tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median). A deviation analysis would also show outlines from data set.\nScatterplot also provided to present the correlation between different variables and their corresponding correlation coefficients.\n\n\n\nPrototype slide 1\n\n\nIn terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later."
   },
   {
     "objectID": "proposal.html#deeper-analysis",
     "href": "proposal.html#deeper-analysis",
-    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "title": "Storyboatd - Loan Default Prediction in Nigeria",
     "section": "Deeper analysis",
     "text": "Deeper analysis\nThis section provides deep dive analysis on variables relationship between each other, both heatmap plot and mosaic plot are provided for modeling the relationship between continuous variables or categorical variables.\n\nUsers can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models."
   },
   {
     "objectID": "proposal.html#loan-default-prediction-using-classification-algorithms",
     "href": "proposal.html#loan-default-prediction-using-classification-algorithms",
-    "title": "R-Shiny Application Project Proposal - Loan Default Prediction",
+    "title": "Storyboatd - Loan Default Prediction in Nigeria",
     "section": "Loan default prediction using classification algorithms",
     "text": "Loan default prediction using classification algorithms\nUpon analyzed variables suitable for loan default prediction from section 1 and section 2, the section 3 here is provided interactive interface allow users to between different resampling methods.\n\n\n\nPrototype slide 3\n\n\nUsers can choose to include or exclude the highly correlated variables to see the effects of whether oversampling versus under sampling versus original data.\nUsers also can select different classification models, and our applications will showcase the results of the models using AOC analysis for prediction accuracy."
   },
