@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="G5 - Hoang Huy, Li Ziyi, Hou Tao">
-<meta name="dcterms.date" content="2023-01-31">
+<meta name="author" content="Hoang Huy, Li Ziyi, Hou Tao">
 
-<title>ISSS608-VAA-Project - Storyboatd - Loan Default Prediction in Nigeria</title>
+<title>ISSS608-VAA-Project - Storyboard - Loan Default Prediction in Nigeria</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,7 +122,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#r-shiny-app" id="toc-r-shiny-app" class="nav-link" data-scroll-target="#r-shiny-app">R-Shiny App</a>
   <ul class="collapse">
   <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">Exploratory data analysis (EDA)</a></li>
-  <li><a href="#deeper-analysis" id="toc-deeper-analysis" class="nav-link" data-scroll-target="#deeper-analysis">Deeper analysis</a></li>
+  <li><a href="#prototype-of-first-page" id="toc-prototype-of-first-page" class="nav-link" data-scroll-target="#prototype-of-first-page">PROTOTYPE OF FIRST PAGE</a></li>
+  <li><a href="#deeper-dive" id="toc-deeper-dive" class="nav-link" data-scroll-target="#deeper-dive">Deeper Dive</a></li>
   <li><a href="#loan-default-prediction-using-classification-algorithms" id="toc-loan-default-prediction-using-classification-algorithms" class="nav-link" data-scroll-target="#loan-default-prediction-using-classification-algorithms">Loan default prediction using classification algorithms</a></li>
   </ul></li>
   </ul>
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Storyboatd - Loan Default Prediction in Nigeria</h1>
+<h1 class="title">Storyboard - Loan Default Prediction in Nigeria</h1>
 </div>
 
 
@@ -144,21 +144,15 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>G5 - Hoang Huy, Li Ziyi, Hou Tao </p>
+             <p>Hoang Huy, Li Ziyi, Hou Tao </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 31, 2023</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 7, 2023</p>
+      <p class="date-modified">March 8, 2023</p>
     </div>
   </div>
     
@@ -200,20 +194,41 @@ ul.task-list li input[type="checkbox"] {
 <h1>R-Shiny App</h1>
 <section id="exploratory-data-analysis-eda" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory data analysis (EDA)</h2>
-<p>The application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis, to measure the skewness of data.</p>
-<p>Another tool can be employed is Deviation Analysis (box plot), to have general understanding of 5 number summaries (min / max , lower quantile / upper quantile and median). A deviation analysis would also show outlines from data set.</p>
-<p>Scatterplot also provided to present the correlation between different variables and their corresponding correlation coefficients.</p>
+<p>This is the first part of the R-Shiny application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis , Deviation Analysis and Scatterplot.</p>
+<p>Distribution analysis is a statistical technique used to assess the symmetry and shape of a dataset. It involves examining the frequency distribution of a predictor variable to identify whether the data is normally distributed or skewed. If a variable is found to be highly skewed, this can impact the accuracy and reliability of statistical models, and may require data transformation or specialized modeling techniques.</p>
+<p>Example:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Barchart-showing-the-normal-distribution-a-distribution-which-is-positively-skewed-and-a.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Another tool can be employed is Deviation Analysis (box plot). Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.</p>
+<p>Example:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/continuous vs categorical boxplot.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Another type of analysis between 2 continuous variables is a scatterplot.</p>
+<p>A scatterplot is a graphical tool used to visualize the relationship between two continuous variables. Each point on the plot represents a combination of values for the two variables, and the pattern of points can reveal the direction, strength, and form of the correlation between the variables. Scatterplots can aid in identifying potential associations between variables and provide insights into the nature of the relationship, which can inform subsequent analyses or hypotheses.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/continuous scatterplot.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="prototype-of-first-page" class="level2">
+<h2 class="anchored" data-anchor-id="prototype-of-first-page">PROTOTYPE OF FIRST PAGE</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Slide1.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Prototype slide 1</figcaption><p></p>
 </figure>
 </div>
-<p>In terms of multi-collinearity, the results will assist users to identify which variables to be excluded when perform classification models later.</p>
 </section>
-<section id="deeper-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="deeper-analysis">Deeper analysis</h2>
-<p>This section provides deep dive analysis on variables relationship between each other, both heatmap plot and mosaic plot are provided for modeling the relationship between continuous variables or categorical variables.</p>
+<section id="deeper-dive" class="level2">
+<h2 class="anchored" data-anchor-id="deeper-dive">Deeper Dive</h2>
+<p>The second section of the R-shiny apps would provide users options to experiment with other analysis types such as Multi-collinearity test and Quasi Complete Separation.</p>
 <p><img src="images/Slide2.JPG" class="img-fluid"></p>
 <p>Users can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models.</p>
 </section>

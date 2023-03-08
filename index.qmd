@@ -1,6 +1,8 @@
 ---
 title: "ISSS608-VAA-Project"
 title-block-style: plain
+about:
+  template: trestles
 format: 
   html:
     code-fold: false
