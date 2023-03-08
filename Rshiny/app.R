@@ -2,11 +2,9 @@ library(shiny)
 library(tidyverse)
 
 # Datset loading
-newloan_working <- read_csv("data/newloan/New_loan_working_dataset.csv")
-newloan <- read_csv("data/newloan/New_loan_final_dataset.csv")
+newloan <- read_csv("data/loan_data_v2/new_loans_cleaned.csv")
 
-repeatloan_working <- read_csv("data/repeatloan/Repeat_Loan_working_dataset.csv")
-repeatloan <- read_csv("data/repeatloan/Repeat_Loan_final_dataset.csv")
+repeatloan <- read_csv("data/loan_data_v2/repeated_loans_cleaned.csv")
 
 
 # Define UI for application that draws a histogram
@@ -49,7 +47,11 @@ ui <- fluidPage(
                 sep = "")),
   # Tabset panel with three options at the top of the main panel
   tabsetPanel(
-    tabPanel("Explore"),
+    tabPanel("Explore",
+             tabsetPanel(
+               tabPanel("Bivariate Analysis"),
+               tabPanel("Correlation Analysis")
+             )),
     tabPanel("Analysis"),
     tabPanel("Predict")
   ),
@@ -96,8 +98,8 @@ server <- function(input, output) {
   output$histogram <- renderPlot({
     if(!is.null(input$Variable)) {
       hist_data_numeric <- as.numeric(data()[input$Variable]) 
-      ggplot(hist_data,
-           aes(x = hist_data_numeric)) +
+      ggplot(hist_data_numeric,
+           aes(x = .data)) +
         geom_histogram() +
         labs(title = "Distribution of Selected Variables")}
   })
