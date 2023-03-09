@@ -1,5 +1,6 @@
 library(shiny)
 library(corrplot)
+library(ggplot2)
 library(tidyverse)
 
 
@@ -108,10 +109,10 @@ server <- function(input, output) {
                 multiple = TRUE)
   })
 
-  selected_bivars <- reactive({
-    c(input$Bi_Variable_Y,
-      input$Bi_Variable_X)
-  })
+  # selected_bivars <- reactive({
+  #   c(input$Bi_Variable_Y,
+  #     input$Bi_Variable_X)
+  # })
   
   
   
@@ -131,26 +132,37 @@ server <- function(input, output) {
   })
   
   # Below is not updated yet
+#   output$histogram <- renderPlot({
+#     vars <- selected_bivars()
+# if (length(vars) > 0) {
+#   hist_data_numeric <- data() %>%
+#     dplyr::select(all_of(vars)) %>%
+#     mutate(value = as.numeric(value))
+#   p1 <- ggplot(hist_data_numeric,
+#                aes(x = value,
+#                    fill = key)) +
+#     geom_histogram()
+# 
+#       if (length(vars) > 1) {
+#         hist_data_numeric2 <- as.numeric(data()[vars[2]])
+#         p2 <- p1 + geom_histogram(data = hist_data_numeric2,
+#                                   aes(x = .data),
+#                                   alpha = 0.5,
+#                                   fill = 'red')
+#       }
+#       print(p2)
+# 
+#     }
+#   })
   output$histogram <- renderPlot({
-    vars <- selected_bivars()
-    if (length(vars) > 0) {
-      hist_data_numeric <- as.numeric(data()[vars[1]])
-      p1 <- ggplot(hist_data_numeric,
-                   aes(x = .data)) +
-        geom_histogram()
-
-      if (length(vars) > 1) {
-        hist_data_numeric2 <- as.numeric(data()[vars[2]])
-        p2 <- p1 + geom_histogram(data = hist_data_numeric2,
-                                  aes(x = .data),
-                                  alpha = 0.5,
-                                  fill = 'red')
-      }
-      print(p2)
-
-  
-    }
+    req(input$LoanType)
+    req(input$Bi_Variable_Y)
+    ggplot(data(),
+           aes(x = factor(.data[[input$Bi_Variable_Y]]))) +
+      geom_bar()
   })
+  
+  
 }
 
 # Run the application 
