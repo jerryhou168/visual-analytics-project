@@ -58,8 +58,7 @@ Example:
 
 ![](images/Barchart-showing-the-normal-distribution-a-distribution-which-is-positively-skewed-and-a.png){fig-align="center"}
 
-Another tool can be employed is Deviation Analysis (box plot).
-Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.
+Another tool can be employed is Deviation Analysis (box plot). Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.
 
 Example:
 
@@ -75,13 +74,41 @@ A scatterplot is a graphical tool used to visualize the relationship between two
 
 ![Prototype slide 1](images/Slide1.png)
 
-## Deeper Dive
+# Deeper Dive
 
-The second section of the R-shiny apps would provide users options to experiment with other analysis types such as Multi-collinearity test and Quasi Complete Separation.
+The second section of the R-shiny apps would provide users options to experiment with other analysis types such as Multi-collinearity test and Quasi Complete Separation to identify which variables should be include or exclude when building Classification model to predict credit frauds from our data.
 
-![](images/Slide2.JPG)
+## Multi- Collinearity Curse
 
-Users can perform heatmap and mosaic plot on different variables to determine whether which variables that can be applied to the subsequent prediction models.
+Multicollinearity refers to the situation in which two or more predictor variables in a machine learning model are highly correlated with each other, making it difficult to identify the independent effects of each variable on the dependent variable.
+
+In a classification model, multicollinearity can lead to unstable and unreliable estimates of the coefficients and make it difficult to interpret the model's results. It can also lead to overfitting and reduce the model's predictive accuracy. To address multicollinearity, one can exclude the highly correlated variables when building classification model
+
+To determine whether multiple variables are in danger of compromising the model by this issue, we can utilize a correlation matrix.
+
+A correlation matrix is a tool that can be used to identify multicollinearity by showing the pairwise correlations between each pair of predictor variables in the model. The correlation coefficient ranges from -1 to 1, where -1 indicates a perfect negative correlation (when one variable increases, the other decreases) and 1 indicates a perfect positive correlation (when one variable increases, the other increases).
+
+In the context of multicollinearity, a high correlation coefficient (close to 1 or -1) between two predictor variables indicates a strong linear relationship between them. This means that one variable can be predicted well by the other, and it becomes difficult to disentangle the effects of the two variables on the dependent variable. It's important to note that correlation doesn't imply causation, and that multicollinearity can also occur between three or more predictor variables, not just pairs.
+
+## ![](images/multicollinearity%20test.PNG){width="687" height="366"}
+
+Quasi Complete Separation
+
+Another issue that our Shiny Apps can allow our users to explore, is the problem with quasi complete separation. Quasi-complete separation is a situation that can occur in classification when a predictor variable perfectly separates the outcome variable into distinct categories.
+
+In other words, when a predictor variable has a perfect linear relationship with the outcome variable, the logistic regression model can perfectly predict which category the outcome variable belongs to based on the value of the predictor variable. This means that the estimated coefficient for the predictor variable becomes infinitely large.
+
+Quasi-complete separation is particularly problematic in small or moderate-sized datasets because it can lead to overfitting and unreliable coefficient estimates. In addition, the model's performance can be sensitive to small changes in the data, which can make it difficult to interpret the results.
+
+To address quasi-complete separation, there are several approaches that can be taken. One approach is to remove the problematic predictor variable or combine it with other variables to reduce its impact.
+
+In some cases, quasi-complete separation may be a real phenomenon in the data and may require a different approach altogether. For example, if the data has a natural threshold or cutoff point, such as in medical diagnosis or credit scoring, the logistic regression model may need to be modified to account for this threshold. Overall, it's important to be aware of quasi-complete separation and to use appropriate methods to address it when it occurs.
+
+One method of visual analytics to determine whether a predictor variable has the problem of quasi complete separation is by scatterplot. Quasi-complete separation can be visualized using a scatterplot, which can help to identify the problematic predictor variable and understand its relationship with the outcome variable.
+
+In a scatterplot, the predictor variable is plotted on the x-axis and the outcome variable is plotted on the y-axis. When there is quasi-complete separation, we typically see that the data points fall into two distinct groups or clusters, with no overlap between the two groups.
+
+![](images/quasi%20complete%20separation.PNG)
 
 ## Loan default prediction using classification algorithms
 
