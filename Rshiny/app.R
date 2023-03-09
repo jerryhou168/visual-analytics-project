@@ -27,7 +27,11 @@ ui <- fluidPage(
   
   # Application title
   titlePanel("Loan Default Prediction"),
-
+  
+  
+  
+  
+  
   # Tabset panel with three options at the top of the main panel
   tabsetPanel(
     tabPanel("Explore",
@@ -45,8 +49,8 @@ ui <- fluidPage(
                           # Allow selection of variables from the chosen loan's dataset    
                           uiOutput(outputId = "Bi_Variable_Y"),
                           uiOutput(outputId = "Bi_Variable_X")),
-                        mainPanel(plotOutput(outputId = "barchart1"))
-                        ),
+                        mainPanel(plotOutput(outputId = "histogram"))
+               ),
                tabPanel("Correlation Analysis",
                         # Input selections on the left panel
                         
@@ -61,7 +65,7 @@ ui <- fluidPage(
                           uiOutput(outputId = "Corr_Variables")),
                         mainPanel(plotOutput(outputId = "Correlationplot"))
                         
-                        )
+               )
              )),
     tabPanel("Analysis",
              mainPanel("Testing")),
@@ -81,7 +85,7 @@ server <- function(input, output) {
   })
   
   output$Corr_Variables <- renderUI({
-    selectInput(inputId = "Variables",
+    selectInput(inputId = "Corr_Variables",
                 label = "Select variables from below",
                 choices = c("approval_duration",
                             "loanamount",
@@ -103,38 +107,49 @@ server <- function(input, output) {
                 choices = names(data()),
                 multiple = TRUE)
   })
-  # output$Variables <- renderUI({
-  #   selectInput(inputId = "Variables",
-  #               label = "Select variables from below",
-  #               choices = names(data()),
-  #               multiple = TRUE)
-  # })
+
+  selected_bivars <- reactive({
+    c(input$Bi_Variable_Y,
+      input$Bi_Variable_X)
+  })
   
   
   
-# Correlation plot  
+  # Correlation plot  
   output$Correlationplot <- renderPlot({
     # To check if inputs are available before generation of plots
     req(input$LoanType)
-    req(input$Variables)
-    var_data <- data()[, input$Variables]
+    req(input$Corr_Variables)
+    var_data <- data()[, input$Corr_Variables]
     corr_data <- cor(var_data)
     # Using corrplot from corrplot library
     corrplot(corr_data,
              method = "ellipse",
              diag = FALSE,
              type = "lower")
-
+    
   })
   
-# Below is not updated yet
+  # Below is not updated yet
   output$histogram <- renderPlot({
-    if(!is.null(input$Variable)) {
-      hist_data_numeric <- as.numeric(data()[input$Variable]) 
-      ggplot(hist_data_numeric,
-             aes(x = .data)) +
-        geom_histogram() +
-        labs(title = "Distribution of Selected Variables")}
+    vars <- selected_bivars()
+    if (length(vars) > 0) {
+      hist_data_numeric <- as.numeric(data()[vars[1]])
+      p1 <- ggplot(hist_data_numeric,
+                   aes(x = .data)) +
+        geom_histogram()
+
+      if (length(vars) > 1) {
+        hist_data_numeric2 <- as.numeric(data()[vars[2]])
+        p2 <- p1 + geom_histogram(data = hist_data_numeric2,
+                                  aes(x = .data),
+                                  alpha = 0.5,
+                                  fill = 'red')
+      }
+      print(p2)
+
+  
+    }
   })
 }
 
