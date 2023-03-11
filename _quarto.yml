@@ -11,8 +11,8 @@ website:
         text: HOME
       - href: intro.qmd
         text: INTRODUCTION
-      - href: proposal.qmd
-        text: PROPOSAL
+      - href: story.qmd
+        text: STORY
       - href: rshiny.qmd
         text: RSHINY APP
       - href: poster.qmd

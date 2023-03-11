@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">INTRODUCTION</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./story.html">
+    <a class="nav-link active" href="./story.html" aria-current="page">
  <span class="menu-text">STORY</span></a>
   </li>  
   <li class="nav-item">
@@ -127,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#deeper-dive" id="toc-deeper-dive" class="nav-link" data-scroll-target="#deeper-dive">Deeper Dive</a>
   <ul class="collapse">
   <li><a href="#multi--collinearity-curse" id="toc-multi--collinearity-curse" class="nav-link" data-scroll-target="#multi--collinearity-curse">Multi- Collinearity Curse</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><img src="images/multicollinearity test.PNG" width="687" height="366"></a></li>
+  <li><a href="#quasi-complete-separation" id="toc-quasi-complete-separation" class="nav-link" data-scroll-target="#quasi-complete-separation">Quasi Complete Separation</a></li>
   <li><a href="#loan-default-prediction-using-classification-algorithms" id="toc-loan-default-prediction-using-classification-algorithms" class="nav-link" data-scroll-target="#loan-default-prediction-using-classification-algorithms">Loan default prediction using classification algorithms</a>
   <ul class="collapse">
   <li><a href="#tidymodels" id="toc-tidymodels" class="nav-link" data-scroll-target="#tidymodels">Tidymodels</a></li>
@@ -247,10 +247,10 @@ ul.task-list li input[type="checkbox"] {
 <p>To determine whether multiple variables are in danger of compromising the model by this issue, we can utilize a correlation matrix.</p>
 <p>A correlation matrix is a tool that can be used to identify multicollinearity by showing the pairwise correlations between each pair of predictor variables in the model. The correlation coefficient ranges from -1 to 1, where -1 indicates a perfect negative correlation (when one variable increases, the other decreases) and 1 indicates a perfect positive correlation (when one variable increases, the other increases).</p>
 <p>In the context of multicollinearity, a high correlation coefficient (close to 1 or -1) between two predictor variables indicates a strong linear relationship between them. This means that one variable can be predicted well by the other, and it becomes difficult to disentangle the effects of the two variables on the dependent variable. It’s important to note that correlation doesn’t imply causation, and that multicollinearity can also occur between three or more predictor variables, not just pairs.</p>
+<p><img src="images/multicollinearity test.PNG" width="687" height="366"></p>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"><img src="images/multicollinearity test.PNG" width="687" height="366"></h2>
-<p>Quasi Complete Separation</p>
+<section id="quasi-complete-separation" class="level2">
+<h2 class="anchored" data-anchor-id="quasi-complete-separation">Quasi Complete Separation</h2>
 <p>Another issue that our Shiny Apps can allow our users to explore, is the problem with quasi complete separation. Quasi-complete separation is a situation that can occur in classification when a predictor variable perfectly separates the outcome variable into distinct categories.</p>
 <p>In other words, when a predictor variable has a perfect linear relationship with the outcome variable, the logistic regression model can perfectly predict which category the outcome variable belongs to based on the value of the predictor variable. This means that the estimated coefficient for the predictor variable becomes infinitely large.</p>
 <p>Quasi-complete separation is particularly problematic in small or moderate-sized datasets because it can lead to overfitting and unreliable coefficient estimates. In addition, the model’s performance can be sensitive to small changes in the data, which can make it difficult to interpret the results.</p>

@@ -90,9 +90,10 @@ A correlation matrix is a tool that can be used to identify multicollinearity by
 
 In the context of multicollinearity, a high correlation coefficient (close to 1 or -1) between two predictor variables indicates a strong linear relationship between them. This means that one variable can be predicted well by the other, and it becomes difficult to disentangle the effects of the two variables on the dependent variable. It's important to note that correlation doesn't imply causation, and that multicollinearity can also occur between three or more predictor variables, not just pairs.
 
-## ![](images/multicollinearity%20test.PNG){width="687" height="366"}
+![](images/multicollinearity%20test.PNG){width="687" height="366"}
 
-Quasi Complete Separation
+
+## Quasi Complete Separation
 
 Another issue that our Shiny Apps can allow our users to explore, is the problem with quasi complete separation. Quasi-complete separation is a situation that can occur in classification when a predictor variable perfectly separates the outcome variable into distinct categories.
 
