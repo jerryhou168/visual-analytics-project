@@ -21,6 +21,7 @@ website:
 format:
   html:
     theme: litera
+    page-layout: full
     css: styles.css
     toc: true
     toc-title: Table of Contents
