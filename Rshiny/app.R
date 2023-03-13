@@ -7,9 +7,9 @@ library(tidyverse)
 
 
 # Datset loading
-newloan <- read_csv("data/loan_data_v2/new_loans_cleaned.csv")
+newloan <- read_csv("data/loan_data_v3/new_loans_cleaned.csv")
 
-repeatloan <- read_csv("data/loan_data_v2/repeated_loans_cleaned.csv")
+repeatloan <- read_csv("data/loan_data_v3/repeated_loans_cleaned.csv")
 
 
 # Define UI for application that draws a histogram
@@ -80,7 +80,6 @@ ui <- fluidPage(
 
 # Define server logic required to allow reading of different dataset
 server <- function(input, output) {
-  # Disable cache to avoid errors due to cache  
   
   
   output$Corr_Variables <- renderUI({
@@ -156,16 +155,22 @@ server <- function(input, output) {
   output$Correlationplot <- renderPlot({
     # To check if inputs are available before generation of plots
     req(input$Corr_LoanType)
-    req(input$Corr_Variables)
+    # To display warning message when less than two variables are chosen
+    if (length(input$Corr_Variables) < 2){
+      plot.new()
+      text(x = 0.5,
+           y = 0.5,
+           labels = "Select two or more variables for the correlation plot",
+           col = "red",
+           cex = 1.5)
+      return(NULL)
+    } else {
     var_data <- corr_data()[, input$Corr_Variables]
-    # print(var_data)
+
     cor_data <- cor(var_data)
     # Using corrplot from corrplot library
-    corrplot(cor_data,
-             method = "ellipse",
-             diag = FALSE,
-             type = "lower")
-    
+    pairs(cor_data)
+    }
   })
   
   
