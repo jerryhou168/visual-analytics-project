@@ -1,9 +1,11 @@
+# Define the control panel on the left
 t2_loanType <- selectInput(inputId = "t2_loanType", 
                            label = "Type of Loans",
                            choices = c("New Loan" = "S",
                                        "Repeat Loan" = "R"),
                            selected = "S")
 
+# Define the variables to be studied in this tab
 newloan_options <- setNames(newloan_factors, 
                             newloan_factors)
 
@@ -18,11 +20,11 @@ t2_variable_x <- uiOutput(outputId = "Bi_Variable_X")
 
 
 
-
+# Define the navigation bar
 bivariate_nav <- fluidRow(
   t2_loanType,
   t2_variable_y,
-  t2_variable_x,
+  t2_variable_x
 )
 
 bivariate_main <-fluidRow(
@@ -109,14 +111,33 @@ bivar <- function(input, output) {
                                    "max_churn_flag",
                                    "loanamount")) {
       p1 <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_Y]]))) +
-        geom_bar() + 
-        theme_economist()
-      
+        geom_bar() +
+        theme_economist() +
+        theme(axis.title.y = element_text(vjust = 2.5),
+              axis.text.x = element_text(angle = 60,
+                                         vjust = 0.5))
+
       p2 <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_X]]))) +
         geom_bar() +
-        theme_economist()
+        theme_economist() +
+        theme(axis.title.y = element_text(vjust = 2.5),
+              axis.text.x = element_text(angle = 60,
+                                         vjust = 0.5))
       p1 + p2 + plot_layout(ncol = 1)
       
+      # Facing issues with generating a mosaic plot using below code based on the article shared
+      # model <- lm(~ as.factor(bivar_data()[[input$Bi_Variable_Y]]) + as.factor(bivar_data()[[input$Bi_Variable_X]]),
+      #             data = bivar_data())
+      # mosaic(model,
+      #        gp = shading_max,
+      #        split_vertical = TRUE) +
+      #   theme_economist()
+      # summary(model)
+      
+      
+      
+      
+            
       # Boxplot for one categorical and one continuous variables      
     } else if (input$Bi_Variable_Y %in% c("bank_name_clients",
                                           "approval_duration_group",
@@ -161,7 +182,11 @@ bivar <- function(input, output) {
       p <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_Y]]),
                                     y = .data[[input$Bi_Variable_X]])) +
         geom_boxplot()
-      p + theme_economist()
+      p + theme_economist() +
+        labs(title = "Bivariate Analysis") +
+        theme(axis.title.y = element_text(vjust = 2.5),
+              axis.text.x = element_text(angle = 60,
+                                         vjust = 0.5))
       
       # Boxplot for one categorical and one continuous variables    
     } else if (!input$Bi_Variable_Y %in% c("bank_name_clients",
@@ -207,7 +232,11 @@ bivar <- function(input, output) {
       p <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_X]]),
                                     y = .data[[input$Bi_Variable_Y]])) +
         geom_boxplot()
-      p + theme_economist()
+      p + theme_economist() +
+        labs(title = "Bivariate Analysis") +
+        theme(axis.title.y = element_text(vjust = 2.5),
+              axis.text.x = element_text(angle = 60,
+                                         vjust = 0.5))
       
       # Scatter plot for two continuous variables    
     } else if (!input$Bi_Variable_Y %in% c("bank_name_clients",
@@ -253,7 +282,11 @@ bivar <- function(input, output) {
       p <- ggplot(bivar_data(), aes(x = .data[[input$Bi_Variable_X]],
                                     y = .data[[input$Bi_Variable_Y]])) +
         geom_point()
-      p + theme_economist()
+      p + theme_economist() +
+        labs(title = "Bivariate Analysis") +
+        theme(axis.title.y = element_text(vjust = 2.5),
+              axis.text.x = element_text(angle = 60,
+                                         vjust = 0.5))
     } else {
       NULL
     }

@@ -91,6 +91,7 @@ server <- function(input, output, session) {
   ## for prediction page
   prediction(input, output, session)
   bivar(input, output)
+  corr(input, output)
 }
 
 #############################################################
