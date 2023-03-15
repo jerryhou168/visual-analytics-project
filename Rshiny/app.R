@@ -89,6 +89,7 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   ## for prediction page
+  univar(input, output)
   prediction(input, output, session)
   bivar(input, output)
   corr(input, output)
