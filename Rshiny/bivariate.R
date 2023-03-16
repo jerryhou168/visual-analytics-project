@@ -69,7 +69,7 @@ bivar <- function(input, output) {
   })
   
   output$Bivarplot <- renderPlot({
-    # Barchart for two categorical variables    
+    # Mosaic plot for two categorical variables    
     if (input$Bi_Variable_Y %in% c("bank_name_clients",
                                    "approval_duration_group",
                                    "age_at_loan_25th_pctile",
@@ -110,30 +110,30 @@ bivar <- function(input, output) {
                                    "mean_referrals",
                                    "max_churn_flag",
                                    "loanamount")) {
-      p1 <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_Y]]))) +
-        geom_bar() +
-        theme_economist() +
-        theme(axis.title.y = element_text(vjust = 2.5),
-              axis.text.x = element_text(angle = 60,
-                                         vjust = 0.5))
+      # Barchart for two categorical variables          
+      # p1 <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_Y]]))) +
+      #   geom_bar() +
+      #   theme_economist() +
+      #   theme(axis.title.y = element_text(vjust = 2.5),
+      #         axis.text.x = element_text(angle = 60,
+      #                                    vjust = 0.5))
+      # 
+      # p2 <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_X]]))) +
+      #   geom_bar() +
+      #   theme_economist() +
+      #   theme(axis.title.y = element_text(vjust = 2.5),
+      #         axis.text.x = element_text(angle = 60,
+      #                                    vjust = 0.5))
+      # p1 + p2 + plot_layout(ncol = 1)
+      
+      mosaicplot(table(bivar_data()[[input$Bi_Variable_X]], bivar_data()[[input$Bi_Variable_Y]]),
+                 color = TRUE,
+                 main = paste("Mosaic plot of", input$Bi_Variable_Y, "vs", input$Bi_Variable_X),
+                 xlab = input$Bi_Variable_Y,
+                 ylab = input$Bi_Variable_X,
+                 cex.axis = 0.8,
+                 las = 2)
 
-      p2 <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_X]]))) +
-        geom_bar() +
-        theme_economist() +
-        theme(axis.title.y = element_text(vjust = 2.5),
-              axis.text.x = element_text(angle = 60,
-                                         vjust = 0.5))
-      p1 + p2 + plot_layout(ncol = 1)
-      
-      # Facing issues with generating a mosaic plot using below code based on the article shared
-      # model <- lm(~ as.factor(bivar_data()[[input$Bi_Variable_Y]]) + as.factor(bivar_data()[[input$Bi_Variable_X]]),
-      #             data = bivar_data())
-      # mosaic(model,
-      #        gp = shading_max,
-      #        split_vertical = TRUE) +
-      #   theme_economist()
-      # summary(model)
-      
       
       
       
