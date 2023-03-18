@@ -87,12 +87,19 @@ ui <- fluidPage(
 ### server
 #############################################################
 
-server <- function(input, output, session) {
+application <- function(input, output, session) {
   ## for prediction page
-  univar(input, output)
+  univar(input, output, session)
   prediction(input, output, session)
   bivar(input, output)
   corr(input, output)
+}
+
+
+server <- function(input, output, session) {
+  tryCatch(application(input, output, session),
+           error = function(c) print('error details ', c)
+  )
 }
 
 #############################################################

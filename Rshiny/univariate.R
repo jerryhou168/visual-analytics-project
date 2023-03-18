@@ -17,7 +17,6 @@ t1_variable_x <- uiOutput(outputId = "Uni_Variable_X")
 
 
 
-
 # Define the navigation bar
 univariate_nav <- fluidRow(
   t1_loanType,
@@ -35,87 +34,93 @@ univariate_main <-fluidRow(
 
 # Server
 
-univar <- function(input, output) {
+global_univariate_chart_rendering = 0
 
-univar_opt <- reactive({
-    if (input$t1_loanType == "S") {
-      return(newloan_options)
-    } else {
-      return(repeatloan_options)
-    }
-  })  
-
-
-
-
-output$Uni_Variable_X <- renderUI({
-  if(input$t1_loanType == "S"){
-    options <- uv_newloan_predictor_options
-  } else {
-    options <- uv_repeatloan_predictor_options
-  }
-  selectInput(inputId = "t1_variables",
-              label = "Variables",
-              choices = options,
-              multiple = TRUE)
-})
-
-
-
-output$Uni_Variable_X <- renderUI({
-   
-  if (input$t1_loanType == "S") {
-    options = newloan_options 
-  } else {
-    options = repeatloan_options
-  }
-    selectInput(inputId = "Uni_Variable_X",
-                label = "Select variable X from below",
-                choices = options,
-                multiple = FALSE)
+univar <- function(input, output, session) {
   
-  })
-  
-
-univar_data <- reactive({
+  univar_data <- reactive({
     if (input$t1_loanType == "S") {
       return(newloan)
     } else {
       return(repeatloan)
     }
   })
+  
+  univar_variables <- reactive({
+    if (input$t1_loanType == "S") {
+      return(uv_newloan_predictor_options)
+    } else {
+      return(uv_repeatloan_predictor_options)
+    }
+  })
+  
+  observeEvent(input$t1_loanType, {
+    default_variable = 'pct_ontime'
+    if(input$t1_loanType == "S"){
+      default_variable = 'bank_name_clients'
+    }
+    selectInput(inputId = "t1_variable",
+                label = "Variables",
+                choices = univar_variables(),
+                selected = default_variable)
+    
+  })
 
-output$Univarplot <- renderPlot({
-
-  if (input$Uni_Variable_X %in% c("bank_name_clients",
-                                 "approval_duration_group",
-                                 "age_at_loan_25th_pctile",
-                                 "credit_rating",
-                                 "termdays",
-                                 "employment_status_risk",
-                                 "level_of_education_risk",
-                                 "referral",
-                                 "bank_account_type_recode",
-                                 "loanamount_group",
-                                 "loanamount",
-                                 "Interestrate",
-                                 "bank_account_type",
-                                 "employment_status",
-                                 "total_referrrals",
-                                 "max_interest_rate",
-                                 "mean_interest_rate",
-                                 "mean_referrals",
-                                 "max_churn_flag",
-                                 "loanamount"))
-  {
-  p <- ggplot(univar_data(), aes(x = data[[input$Uni_Variable_X]])) +
-      geom_histogram()
-
-  p
-  }
-
-
-})
+  output$Uni_Variable_X <- renderUI({
+    selectInput(inputId = "t1_variable",
+                label = "Variables",
+                choices = univar_variables(),
+                multiple = FALSE)
+  })
+  
+  output$Univarplot <- renderPlot({
+    ggplot(univar_data(), aes(x = .data[[input$t1_variable]])) +
+      geom_bar()
+  })
+  
+  # output$Univarplot <- renderPlot({
+  #   
+  #   rendering = 1
+  #   
+  #   if (!(is.null(input$t1_variable))){
+  #     if(input$t1_loanType == "S"){
+  #       if((input$t1_variable %in% repeatloan_factors)){
+  #         ## change loan type
+  #         rendering = 0
+  #       }
+  #       if((input$t1_variable %in% newloan_factors)){
+  #         ## change loan type
+  #         rendering = 1
+  #       }
+  #     }
+  #     if(input$t1_loanType == "R"){
+  #       if((input$t1_variable %in% newloan_factors)){
+  #         ## change loan type
+  #         rendering = 0
+  #       }
+  #       if((input$t1_variable %in% repeatloan_factors)){
+  #         ## change loan type
+  #         rendering = 1
+  #       }
+  #     }
+  #   }
+  #   
+  #   if(rendering == 0){
+  #     p <- text(x = 0.5,
+  #               y = 0.5,
+  #               labels = "Select a variable for univariate plot",
+  #               col = "white",
+  #               cex = 1.5)
+  #   }else{
+  #     p <- ggplot(univar_data(), aes(x = .data[[input$t1_variable]])) +
+  #       geom_bar()
+  #   }
+  #   
+  #   p
+  #   
+  #   
+  # })
+  
 
 }
         
