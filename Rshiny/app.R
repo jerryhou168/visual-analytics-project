@@ -93,6 +93,7 @@ application <- function(input, output, session) {
   prediction(input, output, session)
   bivar(input, output)
   corr(input, output)
+  multi(input, output, session)
 }
 
 
