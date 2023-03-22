@@ -7,11 +7,47 @@ t1_loanType <- selectInput(inputId = "t1_loanType",
 
 # Define the variables to be studied in this tab
 
-uv_newloan_predictor_options <- setNames(newloan_factors, 
-                            newloan_factors)
+newloan_factors_subset = c(
+     "bank_name_clients",
+     "approval_duration_group",
+     "age_at_loan_25th_pctile",
+     "credit_rating",
+     "employment_status_risk",
+     "level_of_education_risk",
+     "referral",
+     "bank_account_type_recode",
+     "loanamount",
+     "age_at_loan",
+     "bank_account_type"
+  )
 
-uv_repeatloan_predictor_options <- setNames(repeatloan_factors, 
-                               repeatloan_factors)
+repeatloan_factors_subset = c(
+    "pct_ontime",
+    "total_ontime",
+    "max_active_of_loans",
+    "bank_name_clients",
+    "max_age_at_loan",
+    "avg_age_at_loan",
+    "employment_status",
+    "bank_account_type",
+    "total_num_of_loans",
+    "total_approval_duration",
+    "max_interest_rate",
+    "mean_interest_rate",
+    "loanamount",
+    "termdays"
+  )  
+  
+  
+repeatloan_factors_subset 
+
+
+
+uv_newloan_predictor_options <- setNames(newloan_factors_subset, 
+                                         newloan_factors_subset)
+
+uv_repeatloan_predictor_options <- setNames(repeatloan_factors_subset, 
+                                            repeatloan_factors_subset)
 
 t1_variable_x <- uiOutput(outputId = "Uni_Variable_X")
 
@@ -74,8 +110,10 @@ univar <- function(input, output, session) {
   })
   
   output$Univarplot <- renderPlot({
-    ggplot(univar_data(), aes(x = .data[[input$t1_variable]])) +
+  p = ggplot(univar_data(), aes(x = .data[[input$t1_variable]])) +
       geom_bar()
+  p + theme_economist()
+  
   })
   
   # output$Univarplot <- renderPlot({

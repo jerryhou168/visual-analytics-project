@@ -32,6 +32,7 @@ newloan_factors <- c("bank_name_clients",
                         "age_at_loan",
                         "bank_account_type")
 
+
 repeatloan_factors <- c( "pct_ontime",
                             "total_ontime",
                             "max_active_of_loans",
