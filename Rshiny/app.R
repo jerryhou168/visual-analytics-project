@@ -94,6 +94,11 @@ application <- function(input, output, session) {
   bivar(input, output)
   corr(input, output)
   quasicomplete(input, output, session)
+<<<<<<< HEAD
+  
+=======
+  multi(input, output, session)
+>>>>>>> 1c1a6a1444266fea7c904cb832bd9e67cc3039c3
 }
 
 

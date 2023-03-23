@@ -39,11 +39,8 @@ corr <- function(input, output){
   corr_opt <- reactive({
     if (input$t3_loanType == "S") {
       corr_choices <- c("approval_duration",
-                        "loanamount",
                         "totaldue",
-                        "age_at_loan",
-                        "longitude_gps",
-                        "latitude_gps")
+                        "age_at_loan")
     } else {
       corr_choices <- c("pct_ontime",
                         "total_ontime",
@@ -54,15 +51,7 @@ corr <- function(input, output){
                         "total_num_of_loans",
                         "total_approval_duration",
                         "mean_approval_duration",
-                        "max_interest_rate",
-                        "mean_interst_rate",
-                        "mean_referrals",
-                        "max_chun_flag",
-                        "mean_churn_flag",
-                        "loannumber",
-                        "totaldue",
-                        "longitude_gps",
-                        "latitude_gps")
+                        "totaldue")
     }
   })  
   
@@ -84,20 +73,20 @@ corr <- function(input, output){
   })
 
   
+  panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...){
+    # usr <- par("usr")
+    # on.exit(par(usr))
+    r <- abs(cor(x, y, use = "complete.obs"))
+    txt <- format(c(r, 0.123456789),
+                  digits = digits)[1]
+    txt <- paste(prefix, txt, sep = "")
+    if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
+    text(0.5,
+         0.5,
+         txt,
+         cex = cex.cor * (1 + r) /2)
+  }
   
-    
-  # output$Corr_Variables <- renderUI({
-  #   
-  #   if (input$t3_LoanType == "S"){
-  #     corr_choices <- newloan_options
-  #   } else {
-  #     corr_choices <- repeatloan_options
-  #   }
-  #   selectInput(inputId = "Corr_Variables",
-  #               label = "Select variables from below",
-  #               choices = corr_choices,
-  #               multiple = TRUE)
-  # })
   
   # Correlation plot  
   output$Corrplot <- renderPlot({
@@ -116,8 +105,11 @@ corr <- function(input, output){
       var_data <- corr_data()[, input$Corr_Variables]
       
       cor_data <- cor(var_data)
+      par(usr = c(0, 1, 0, 1))
+      
       # Using corrplot from corrplot library
-      pairs(cor_data)
+      pairs(cor_data,
+            upper.panel = panel.cor)
     }
   })
 
