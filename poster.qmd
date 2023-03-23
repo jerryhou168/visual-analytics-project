@@ -15,5 +15,28 @@ linestretch: 3
 editor: visual
 ---
 
+```{r}
+library(ggplot2)
+library(performance)
+library(patchwork)
+library(graphics)
+library(ggthemes)
+library(tidyverse)
+```
 
-Poster
+```{r}
+newloan <- read_csv("C:/thomashoanghuy/visual-analytics-project/Rshiny/data/loan_data_v2/new_loans_cleaned.csv", 
+                    show_col_types = FALSE)
+```
+
+```{r}
+head(newloan)
+```
+
+```{r}
+ggplot(data = newloan,
+       aes(x = approval_duration_group , fill = good_bad_flag)) +
+geom_bar(bins = 20,
+                 color = "lightblue")+
+  theme_bw()
+```

@@ -123,7 +123,7 @@ quasicomplete <- function(input, output, session) {
   output$quasiplot <- renderPlot({
   ggplot(qs_data(), aes(x = .data[[input$t5_variable]] , 
                                fill = qs_filter() )) + 
-  geom_bar()
+  geom_bar(bins = 20, color = "lightblue")
   
   })
   
