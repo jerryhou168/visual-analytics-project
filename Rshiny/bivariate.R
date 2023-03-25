@@ -68,6 +68,15 @@ bivar <- function(input, output) {
     }
   })
   
+  biv_filter <- reactive({
+    if (input$t2_loanType == "S") {
+      return(newloan$good_bad_flag)
+    } else {
+      return(repeatloan$good_bad_flag)
+    }
+  })
+  
+  
   output$Bivarplot <- renderPlot({
     # Mosaic plot for two categorical variables    
     if (input$Bi_Variable_Y %in% c("bank_name_clients",
@@ -181,7 +190,7 @@ bivar <- function(input, output) {
                                            "loanamount")) {
       p <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_Y]]),
                                     y = .data[[input$Bi_Variable_X]])) +
-        geom_boxplot()
+        geom_boxplot(aes(colour = factor(biv_filter())))
       p + theme_economist() +
         labs(title = "Bivariate Analysis") +
         theme(axis.title.y = element_text(vjust = 2.5),
@@ -231,7 +240,7 @@ bivar <- function(input, output) {
                                           "loanamount")) {
       p <- ggplot(bivar_data(), aes(x = factor(.data[[input$Bi_Variable_X]]),
                                     y = .data[[input$Bi_Variable_Y]])) +
-        geom_boxplot()
+        geom_boxplot(aes(colour = factor(biv_filter())))
       p + theme_economist() +
         labs(title = "Bivariate Analysis") +
         theme(axis.title.y = element_text(vjust = 2.5),
@@ -281,7 +290,7 @@ bivar <- function(input, output) {
                                            "loanamount")) {
       p <- ggplot(bivar_data(), aes(x = .data[[input$Bi_Variable_X]],
                                     y = .data[[input$Bi_Variable_Y]])) +
-        geom_point()
+        geom_point(aes(colour = factor(biv_filter())))
       p + theme_economist() +
         labs(title = "Bivariate Analysis") +
         theme(axis.title.y = element_text(vjust = 2.5),
