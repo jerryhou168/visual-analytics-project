@@ -16,7 +16,7 @@ newloan_factors_subset = c(
   "level_of_education_risk",
   "referral",
   "bank_account_type_recode",
-  "loanamount",
+  "termdays",
   "age_at_loan",
   "bank_account_type"
 )
@@ -31,10 +31,7 @@ repeatloan_factors_subset = c(
   "employment_status",
   "bank_account_type",
   "total_num_of_loans",
-  "total_approval_duration",
-  "max_interest_rate",
-  "mean_interest_rate",
-  "loanamount",
+  "max_approval_duration",
   "termdays"
 )  
 
@@ -123,7 +120,8 @@ quasicomplete <- function(input, output, session) {
   output$quasiplot <- renderPlot({
   ggplot(qs_data(), aes(x = .data[[input$t5_variable]] , 
                                fill = qs_filter() )) + 
-  geom_bar(bins = 20, color = "lightblue")
+  geom_bar(bins = 20)+
+  theme_economist()
   
   })
   

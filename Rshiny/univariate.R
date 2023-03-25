@@ -16,7 +16,7 @@ newloan_factors_subset = c(
      "level_of_education_risk",
      "referral",
      "bank_account_type_recode",
-     "loanamount",
+     "termdays",
      "age_at_loan",
      "bank_account_type"
   )
@@ -31,10 +31,7 @@ repeatloan_factors_subset = c(
     "employment_status",
     "bank_account_type",
     "total_num_of_loans",
-    "total_approval_duration",
-    "max_interest_rate",
-    "mean_interest_rate",
-    "loanamount",
+    "max_approval_duration",
     "termdays"
   )  
   
@@ -115,50 +112,6 @@ univar <- function(input, output, session) {
   p + theme_economist()
   
   })
-  
-  # output$Univarplot <- renderPlot({
-  #   
-  #   rendering = 1
-  #   
-  #   if (!(is.null(input$t1_variable))){
-  #     if(input$t1_loanType == "S"){
-  #       if((input$t1_variable %in% repeatloan_factors)){
-  #         ## change loan type
-  #         rendering = 0
-  #       }
-  #       if((input$t1_variable %in% newloan_factors)){
-  #         ## change loan type
-  #         rendering = 1
-  #       }
-  #     }
-  #     if(input$t1_loanType == "R"){
-  #       if((input$t1_variable %in% newloan_factors)){
-  #         ## change loan type
-  #         rendering = 0
-  #       }
-  #       if((input$t1_variable %in% repeatloan_factors)){
-  #         ## change loan type
-  #         rendering = 1
-  #       }
-  #     }
-  #   }
-  #   
-  #   if(rendering == 0){
-  #     p <- text(x = 0.5,
-  #               y = 0.5,
-  #               labels = "Select a variable for univariate plot",
-  #               col = "white",
-  #               cex = 1.5)
-  #   }else{
-  #     p <- ggplot(univar_data(), aes(x = .data[[input$t1_variable]])) +
-  #       geom_bar()
-  #   }
-  #   
-  #   p
-  #   
-  #   
-  # })
-  
 
 }
         
