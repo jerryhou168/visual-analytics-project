@@ -6,20 +6,27 @@ t4_loanType <- selectInput(inputId = "t4_loanType",
                            selected = "S")
 
 # Define the variables to be studied in this tab
-newloan_options <- c("approval_duration",
+newloan_Options <- c("approval_duration",
                      "totaldue",
                      "age_at_loan")
 
-repeatloan_options <- c("pct_ontime",
-                       "total_ontime",
-                       "max_active_of_loans",
-                       "max_approval_duration",
-                       "max_age_at_loan",
-                       "avg_age_at_loan",
-                       "total_num_of_loans",
-                       "total_approval_duration",
-                       "mean_approval_duration",
-                       "totaldue")
+repeatloan_Options <- c("pct_ontime",
+                        "total_ontime",
+                        "max_active_of_loans",
+                        "max_approval_duration",
+                        "max_age_at_loan",
+                        "avg_age_at_loan",
+                        "total_num_of_loans",
+                        "total_approval_duration",
+                        "mean_approval_duration",
+                        "totaldue")
+
+newloan_options <- setNames(newloan_Options,
+                            newloan_Options)
+
+repeatloan_options <- setNames(repeatloan_Options,
+                               repeatloan_Options)
+
 
 
 t4_variable <- uiOutput(outputId = "Multi_Variables")
@@ -45,7 +52,7 @@ multicollinearity_main <-fluidRow(
 )
 
 multi <- function(input, output, session){
-
+  
   multi_data <- reactive({
     if (input$t4_loanType == "S") {
       return(newloan)
@@ -53,7 +60,7 @@ multi <- function(input, output, session){
       return(repeatloan)
     }
   })  
-
+  
   multi_variables <- reactive({
     if (input$t4_loanType == "S") {
       return(newloan_options)
@@ -61,21 +68,21 @@ multi <- function(input, output, session){
       return(repeatloan_options)
     }
   })
-
+  
   
   observeEvent(input$t4_loanType, {
-    default_variable = 'pct_ontime'
+    default_variable = 'approval_duration'
     if(input$t4_loanType == "S"){
-      default_variable = 'approval_duration'
+      default_variable = 'pct_ontime'
     }
     selectInput(inputId = "t4_variables",
                 label = "Select variables from below",
                 choices = multi_variables(),
                 selected = default_variable)
-#                 multiple = TRUE)
+    #                 multiple = TRUE)
     
   })
-
+  
   output$Multi_Variables <- renderUI({
     selectInput(inputId = "t4_variables",
                 label = "Select variables from below",
@@ -83,10 +90,10 @@ multi <- function(input, output, session){
                 multiple = TRUE)
   })
   
- 
+  
   model <- reactive({lm(reformulate(input$Multi_Variables),
-                                    multi_flag,
-    data = multi_data())}) 
+                        multi_flag,
+                        data = multi_data())}) 
   # summary(reformulate(input$Multi_Variables,
   #                   multi_flag))
   
@@ -104,12 +111,12 @@ multi <- function(input, output, session){
     #        cex = 1.5)
     #   return(NULL)
     # } else {
-
-
+    
+    
     # check_collinearity(model)
-      check_c <- check_collinearity(model())
-      plot(check_c)
-#     }
+    check_c <- check_collinearity(model())
+    plot(check_c)
+    #     }
   })
   
   
