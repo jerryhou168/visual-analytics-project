@@ -109,7 +109,8 @@ corr <- function(input, output){
       
       # Using corrplot from corrplot library
       pairs(cor_data,
-            upper.panel = panel.cor)
+            upper.panel = panel.cor,
+            lower.panel = NULL)
     }
   })
 
