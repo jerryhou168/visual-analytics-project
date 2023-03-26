@@ -34,6 +34,10 @@ bivariate_main <-fluidRow(
   
 )
 
+# Define the color scheme
+color_sch <- c("#F6423C", "#1DC9A4", "#2E45B8")
+
+
 
 # Server
 
@@ -292,7 +296,10 @@ bivar <- function(input, output) {
                                            "loanamount")) {
       p <- ggplot(bivar_data(), aes(x = .data[[input$Bi_Variable_X]],
                                     y = .data[[input$Bi_Variable_Y]])) +
-        geom_point(aes(colour = factor(biv_filter())))
+        geom_point(aes(colour = factor(biv_filter())),
+                   shape = "circle",
+                   size = 3) + 
+        scale_color_manual(values = color_sch)
       p + theme_economist() +
         labs(title = "Bivariate Analysis",
              colour = "Loan Flag") +
