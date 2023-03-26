@@ -1,0 +1,34 @@
+---
+title: "User Guide"
+date-modified: "`r Sys.Date()`"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+format: 
+  html:
+    code-fold: false
+    code-tools: false
+linestretch: 2
+editor: visual
+---
+
+# Univariate tab
+
+Select which datasets to be used (New Loans datasets or Repeated Loans dataset)
+
+![](images/univariate%20tab%201.jpg)
+
+Next users have to choose which variables to be analyze under Univariate Analysis
+
+![](images/univariate%20tab%202.jpg)
+
+The result bar chart will show you the distributions of the loans data as per the selected variable.
+
+# Bivariate tab
+
+# Correlation tab
+
+# Multi Collinearity tab
+
+# Quasi Complete Seperation tab

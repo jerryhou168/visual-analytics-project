@@ -15,6 +15,8 @@ website:
         text: STORY
       - href: rshiny.qmd
         text: RSHINY APP
+      - href: userguide.qmd
+        text: User Guide 
       - href: poster.qmd
         text: POSTER
 
