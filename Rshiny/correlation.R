@@ -79,12 +79,15 @@ corr <- function(input, output){
     r <- abs(cor(x, y, use = "complete.obs"))
     txt <- format(c(r, 0.123456789),
                   digits = digits)[1]
+    col <- ifelse(r > 0.8, "aquamarine2", "brown2")
+    # set color based on correlation value
     txt <- paste(prefix, txt, sep = "")
     if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
     text(0.5,
          0.5,
          txt,
-         cex = cex.cor * (1 + r) /2)
+         cex = cex.cor * (1 + r) /2,
+         col = col)
   }
   
   
