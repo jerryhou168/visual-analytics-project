@@ -14,7 +14,6 @@ linestretch: 2
 editor: visual
 ---
 
-
 ![](images/intro1.jpg)
 
 # Problem
@@ -24,7 +23,6 @@ Loan lending is one of the most important financial services. Loan default risk 
 # Challenges
 
 Beside the difficulty and accuracy of customer loan default prediction in real words, more than often, imbalanced data collected are also have significant impact on customer loan default prediction, imbalanced data can resulted in poor performance with traditional predictive models and evaluation metrics that assume a balanced class distribution.
-
 
 # Background
 
@@ -68,19 +66,19 @@ Distribution analysis is a statistical technique used to assess the symmetry and
 
 Example:
 
-![](images/prototype-1.png){fig-align="center"}
-
-Another tool can be employed is Deviation Analysis (box plot). Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.
+![](images/image-400908432.png)Another tool can be employed is Deviation Analysis (box plot). Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.
 
 Example:
 
-![](images/prototype-2.png){fig-align="center"}
+![](images/image-1949757529.png)
+
+![](images/image-872201375.png)
 
 Another type of analysis between 2 continuous variables is a scatterplot.
 
 A scatterplot is a graphical tool used to visualize the relationship between two continuous variables. Each point on the plot represents a combination of values for the two variables, and the pattern of points can reveal the direction, strength, and form of the correlation between the variables. Scatterplots can aid in identifying potential associations between variables and provide insights into the nature of the relationship, which can inform subsequent analyses or hypotheses.
 
-![](images/prototype-3.png){fig-align="center"}
+![](images/image-212117142.png)
 
 ## Deep Data Analysis
 
@@ -114,7 +112,9 @@ In some cases, quasi-complete separation may be a real phenomenon in the data an
 
 One method of visual analytics to determine whether a predictor variable has the problem of quasi complete separation is by scatterplot. Quasi-complete separation can be visualized using a scatterplot, which can help to identify the problematic predictor variable and understand its relationship with the outcome variable.
 
-![](images/prototype-5.png){fig-align="center"}
+![](images/image-573596474.png)
+
+![](images/image-611142165.png)
 
 In a barchar, the predictor variable is plotted on the x-axis and the outcome variable is plotted and stacked on the y-axis. When there is quasi-complete separation, we typically see that the data points fall into two distinct groups or clusters, with no overlap between the two groups.
 

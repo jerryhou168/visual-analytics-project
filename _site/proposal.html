@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -115,7 +115,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
   <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
@@ -160,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 12, 2023</p>
+      <p class="date-modified">March 26, 2023</p>
     </div>
   </div>
     
@@ -169,6 +171,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p><img src="images/intro1.jpg" class="img-fluid"></p>
+<section id="problem" class="level1">
+<h1>Problem</h1>
+<p>Loan lending is one of the most important financial services. Loan default risk assessment is part of the loan lending process; it does impact the profitability of financial institutions when the loan receiver is unable to pay back on time. Customers’ ability to pay back and willingness to pay back are essential considerations in loan lending.</p>
+</section>
+<section id="challenges" class="level1">
+<h1>Challenges</h1>
+<p>Beside the difficulty and accuracy of customer loan default prediction in real words, more than often, imbalanced data collected are also have significant impact on customer loan default prediction, imbalanced data can resulted in poor performance with traditional predictive models and evaluation metrics that assume a balanced class distribution.</p>
+</section>
 <section id="background" class="level1">
 <h1>Background</h1>
 <p>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.</p>
@@ -205,25 +216,13 @@ ul.task-list li input[type="checkbox"] {
 <p>This is the first part of the R-Shiny application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis , Deviation Analysis and Scatterplot.</p>
 <p>Distribution analysis is a statistical technique used to assess the symmetry and shape of a dataset. It involves examining the frequency distribution of a predictor variable to identify whether the data is normally distributed or skewed. If a variable is found to be highly skewed, this can impact the accuracy and reliability of statistical models, and may require data transformation or specialized modeling techniques.</p>
 <p>Example:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/prototype-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>Another tool can be employed is Deviation Analysis (box plot). Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.</p>
+<p><img src="images/image-400908432.png" class="img-fluid">Another tool can be employed is Deviation Analysis (box plot). Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.</p>
 <p>Example:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/prototype-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="images/image-1949757529.png" class="img-fluid"></p>
+<p><img src="images/image-872201375.png" class="img-fluid"></p>
 <p>Another type of analysis between 2 continuous variables is a scatterplot.</p>
 <p>A scatterplot is a graphical tool used to visualize the relationship between two continuous variables. Each point on the plot represents a combination of values for the two variables, and the pattern of points can reveal the direction, strength, and form of the correlation between the variables. Scatterplots can aid in identifying potential associations between variables and provide insights into the nature of the relationship, which can inform subsequent analyses or hypotheses.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/prototype-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="images/image-212117142.png" class="img-fluid"></p>
 </section>
 <section id="deep-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="deep-data-analysis">Deep Data Analysis</h2>
@@ -249,11 +248,8 @@ ul.task-list li input[type="checkbox"] {
 <p>To address quasi-complete separation, there are several approaches that can be taken. One approach is to remove the problematic predictor variable or combine it with other variables to reduce its impact.</p>
 <p>In some cases, quasi-complete separation may be a real phenomenon in the data and may require a different approach altogether. For example, if the data has a natural threshold or cutoff point, such as in medical diagnosis or credit scoring, the logistic regression model may need to be modified to account for this threshold. Overall, it’s important to be aware of quasi-complete separation and to use appropriate methods to address it when it occurs.</p>
 <p>One method of visual analytics to determine whether a predictor variable has the problem of quasi complete separation is by scatterplot. Quasi-complete separation can be visualized using a scatterplot, which can help to identify the problematic predictor variable and understand its relationship with the outcome variable.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/prototype-5.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="images/image-573596474.png" class="img-fluid"></p>
+<p><img src="images/image-611142165.png" class="img-fluid"></p>
 <p>In a barchar, the predictor variable is plotted on the x-axis and the outcome variable is plotted and stacked on the y-axis. When there is quasi-complete separation, we typically see that the data points fall into two distinct groups or clusters, with no overlap between the two groups.</p>
 </section>
 </section>
@@ -264,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="framework">Framework</h3>
 <p>The tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles.</p>
 <ol type="1">
-<li><p><strong><em>rsample </em></strong>: The rsample package provides functions to create different types of resamples and corresponding variables selected for prediction.</p></li>
+<li><p><strong><em>rsample</em></strong> : The rsample package provides functions to create different types of resamples and corresponding variables selected for prediction.</p></li>
 <li><p><strong><em>parsnip</em></strong>: The goal of parsnip is to provide a tidy, unified interface to models in loan default prediction.</p></li>
 <li><p><strong><em>recipes</em></strong>: Recipe to preprocessing data for loan default procession.</p></li>
 <li><p><strong><em>yardstick</em></strong>: Yardstick is a package to estimate how well models are working using tidy data principles.</p></li>
