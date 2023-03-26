@@ -7,6 +7,7 @@ library(recipes)
 library(graphics)
 library(ggthemes)
 library(tidyverse)
+library(recipes)
 
 ## import data
 newloan <- read_csv("data/loan_data_v2/new_loans_cleaned.csv", 
