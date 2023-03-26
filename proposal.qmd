@@ -14,6 +14,18 @@ linestretch: 2
 editor: visual
 ---
 
+
+![](images/intro1.jpg)
+
+# Problem
+
+Loan lending is one of the most important financial services. Loan default risk assessment is part of the loan lending process; it does impact the profitability of financial institutions when the loan receiver is unable to pay back on time. Customers' ability to pay back and willingness to pay back are essential considerations in loan lending.
+
+# Challenges
+
+Beside the difficulty and accuracy of customer loan default prediction in real words, more than often, imbalanced data collected are also have significant impact on customer loan default prediction, imbalanced data can resulted in poor performance with traditional predictive models and evaluation metrics that assume a balanced class distribution.
+
+
 # Background
 
 Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.
@@ -106,7 +118,6 @@ One method of visual analytics to determine whether a predictor variable has the
 
 In a barchar, the predictor variable is plotted on the x-axis and the outcome variable is plotted and stacked on the y-axis. When there is quasi-complete separation, we typically see that the data points fall into two distinct groups or clusters, with no overlap between the two groups.
 
-
 ## Loan Default Prediction
 
 Upon analyzed variables identified for loan default prediction, next step is prediction. this study make use of Tidymodels library in R for prediction.
@@ -115,13 +126,13 @@ Upon analyzed variables identified for loan default prediction, next step is pre
 
 The tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles.
 
-1. ***rsample ***: The rsample package provides functions to create different types of resamples and corresponding variables selected for prediction.
+1.  ***rsample*** : The rsample package provides functions to create different types of resamples and corresponding variables selected for prediction.
 
-2. ***parsnip***: The goal of parsnip is to provide a tidy, unified interface to models in loan default prediction.
+2.  ***parsnip***: The goal of parsnip is to provide a tidy, unified interface to models in loan default prediction.
 
-3. ***recipes***: Recipe to preprocessing data for loan default procession.
+3.  ***recipes***: Recipe to preprocessing data for loan default procession.
 
-4. ***yardstick***: Yardstick is a package to estimate how well models are working using tidy data principles.
+4.  ***yardstick***: Yardstick is a package to estimate how well models are working using tidy data principles.
 
 ![](images/prototype-6.png){fig-align="center"}
 
@@ -183,6 +194,5 @@ It also can use different prediction algorithms to achieve better loan default p
 2.  Fit Stepwise -Boosted Tree
 
 3.  Bootstrap Forest
-
 
 The UI will enable interactive loan default prediction by selecting various variables and machine learning algorithms.
