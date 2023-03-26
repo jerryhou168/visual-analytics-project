@@ -32,24 +32,19 @@ repeatloan_options <- setNames(repeatloan_Options,
 t4_variable <- uiOutput(outputId = "Multi_Variables")
 
 
-multi_flag <- c("good_bad_flag")
-
-
-
-
 multicollinearity_nav <- fluidRow(
   t4_loanType,
-  t4_variable
-  
-)
+  t4_variable)
 
 
 multicollinearity_main <-fluidRow(
-  plotOutput(outputId = "Multiliplot",
+  plotOutput(outputId = "vifplot",
              width = "100%",
-             height = 400)
-  
-)
+             height = 400))
+
+
+
+
 
 multi <- function(input, output, session){
   
@@ -68,60 +63,64 @@ multi <- function(input, output, session){
       return(repeatloan_options)
     }
   })
+ 
+  multi_filter <- reactive({
+    if (input$t4_loanType == "S") {
+      return(newloan$good_bad_flag)
+    } else {
+      return(repeatloan$good_bad_flag)
+    }
+  })
+
   
   
   observeEvent(input$t4_loanType, {
-    default_variable = 'approval_duration'
+    default_variable = 'pct_ontime' 
     if(input$t4_loanType == "S"){
-      default_variable = 'pct_ontime'
+      default_variable = 'approval_duration'
     }
-    selectInput(inputId = "t4_variables",
+    selectInput(inputId = "Multi_Variables",
                 label = "Select variables from below",
                 choices = multi_variables(),
-                selected = default_variable)
-    #                 multiple = TRUE)
+                selected = default_variable,
+                multiple = TRUE)
     
   })
   
   output$Multi_Variables <- renderUI({
-    selectInput(inputId = "t4_variables",
+    selectInput(inputId = "Multi_Variables",
                 label = "Select variables from below",
                 choices = multi_variables(),
                 multiple = TRUE)
   })
   
   
-  model <- reactive({lm(reformulate(input$Multi_Variables),
-                        multi_flag,
-                        data = multi_data())}) 
-  # summary(reformulate(input$Multi_Variables,
-  #                   multi_flag))
-  
-  # VIF plot  
-  output$Multiliplot <- renderPlot({
-    # To check if inputs are available before generation of plots
-    req(input$t4_variables)
-    # To display warning message when less than two variables are chosen
-    # if (length(input$t4_variables) < 2){
-    #   plot.new()
-    #   text(x = 0.5,
-    #        y = 0.5,
-    #        labels = "Select two or more variables for the VIF plot",
-    #        col = "red",
-    #        cex = 1.5)
-    #   return(NULL)
-    # } else {
+  # create_recipe <- function(data){
+  #   data_recipe <- recipe(multi_filter() ~ .,
+  #                         data = data)
+  #   data_recipe <- step_log(data_recipe, all_numeric())
+  #   data_recipe <- step_novel(data_recipe, all_nominal(),
+  #                -all_outcomes())
+  #   data_recipe <- step_dummy(data_recipe, all_nominal(),
+  #                -all_outcomes())
+  #   return (data_recipe)
+  # }
+
+
+  output$vifplot <- renderPlot({  
+    req(input$Multi_Variables)
+    data_recipe <- recipe(multi_filter() ~ .,
+                          data = multi_data())
+    baking_recipe <- data_recipe %>% 
+      step_log(all_numeric()) %>% 
+      step_novel(all_nominal(), -all_outcomes()) %>% 
+      step_dummy(all_nominal(), -all_outcomes())
     
+    baked_data <- bake(baking_recipe, new_data = multi_data())
     
-    # check_collinearity(model)
-    check_c <- check_collinearity(model())
-    plot(check_c)
-    #     }
+    model <- glm(multi_filter() ~ ., family = binomial("logit"), data = baked_data)
+    
+    plot <- check_collinearity(model)
+    plot(plot)
   })
-  
-  
-}
-
-
-
-
+  }

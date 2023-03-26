@@ -94,6 +94,7 @@ application <- function(input, output, session) {
   bivar(input, output)
   corr(input, output)
   quasicomplete(input, output, session)
+  multi(input, output, session)
 
 }
 
