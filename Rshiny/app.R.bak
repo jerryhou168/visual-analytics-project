@@ -12,7 +12,6 @@ source("prediction.R", local = TRUE)
 ### ui
 #############################################################
 ui <- fluidPage(
-  useShinyjs(),
   tabsetPanel(
     id = "tabs",
     tabPanel("univariate",
@@ -72,13 +71,10 @@ ui <- fluidPage(
     ),
     tabPanel("loan Default Prediction",
              sidebarLayout(
-               fluid = TRUE,
                sidebarPanel(
-                 prediction_nav,
-                 width = 12
+                 prediction_nav
                ),
                mainPanel(
-                 width = 12,
                  prediction_main
                )
              ),
@@ -104,7 +100,7 @@ application <- function(input, output, session) {
 
 server <- function(input, output, session) {
   tryCatch(application(input, output, session),
-           error = function(c) print(paste0('error details', c))
+           error = function(c) print('error details ', c)
   )
 }
 

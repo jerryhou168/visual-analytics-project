@@ -1,88 +1,31 @@
-##############################################################################
-### Prediction Details
-##############################################################################
+source("prediction/r_sampling.R", local = TRUE)
+source("prediction/r_prediction.R", local = TRUE)
 
-source("prediction_loan_default.R", local = TRUE)
+source("prediction/prediction-ui-parameters.R", local = TRUE)
 
-##############################################################################
-### UI
-##############################################################################
+source("prediction/prediction-ui-sampling.R", local = TRUE)
 
-### Prediction Panel
+source("prediction/prediction-ui-onealg.R", local = TRUE)
 
-newloan_predictor_options <- setNames(newloan_factors, 
-                                      newloan_factors)
+source("prediction/prediction-ui-twoalg.R", local = TRUE)
 
-repeatloan_predictor_options <- setNames(repeatloan_factors, 
-                                         repeatloan_factors)
+source("prediction/prediction-ui-threealg.R", local = TRUE)
 
+source("prediction/prediction-ui.R", local = TRUE)
 
-t6_slt_loanType <- selectInput(inputId = "t6_loanType", 
-                                 label = "Type of Loans",
-                                 choices = c("New Loan" = "S",
-                                             "Repeat Loan" = "R"),
-                                 selected = "S")
+source("prediction/sampling-server.R", local = TRUE)
 
-t6_slt_predictors <- uiOutput(outputId = "output_t6_predictors")
-
-t6_slt_algorithm <- selectInput(inputId = "t6_algorithm", 
-                             label = "Prediction Algorithm",
-                             choices = c("Nominal Logistic Regression" = "NL",
-                                         "Fit Stepwise" = "FS",
-                                         "Boosted Tree" = "BT",
-                                         "Bootstrap Forest" = "BF"),
-                             selected = "NL")
+source("prediction/prediction-server.R", local = TRUE)
 
 
-t6_btn_predict <- actionButton("go", "Predict")
-t6_btn_reset <- actionButton("reset", "Clear")
+## Define a Global Prediction Working in Progress Variable
+Global_Prediction_WIP_Flag <<- FALSE
 
-### Panel elements
-prediction_nav <- fluidRow(
-  t6_slt_loanType,
-  t6_slt_predictors,
-  t6_slt_algorithm,
-  t6_btn_predict,
-  t6_btn_reset
-)
+Global_Prediction_TGT_Flag <<- c("good_bad_flag")
 
-prediction_main <-fluidRow(
-  h2("main prediction")
-)
-
-##############################################################################
-### Server
-##############################################################################
-
-prediction <- function(input, output, session) {
+prediction <- function(input, output, session){
   
-  observeEvent(input$go, {
-    loan_default_prediction(input$t6_loanType, 
-                            input$t6_predictors, 
-                            input$t6_algorithm)
-  })
+  prediction_parameter_loading(input, output, session)
   
-  observeEvent(input$reset, {
-    updateSelectInput(session, "t6_loanType", 
-                      selected = "S")
-    
-    updateSelectInput(session, "t6_predictors", 
-                      choices = newloan_predictor_options)
-    
-    updateSelectInput(session, "t6_algorithm", 
-                      selected = "NL")
-    
-  })
-  
-  output$output_t6_predictors <- renderUI({
-    if(input$t6_loanType == "S"){
-      options <- newloan_predictor_options
-    } else {
-      options <- repeatloan_predictor_options
-    }
-    selectInput(inputId = "t6_predictors",
-                label = "Variables",
-                choices = options,
-                multiple = TRUE)
-  })
 }
+
