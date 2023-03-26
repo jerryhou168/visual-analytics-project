@@ -197,7 +197,7 @@ bivar <- function(input, output) {
         geom_boxplot(aes(colour = factor(biv_filter())))
       p + theme_economist() +
         labs(title = "Bivariate Analysis",
-             colour = "Loan Flag") +
+             colour = "Loan Quality") +
         theme(axis.title.y = element_text(vjust = 2.5),
               axis.text.x = element_text(angle = 60,
                                          vjust = 0.5))
@@ -248,7 +248,7 @@ bivar <- function(input, output) {
         geom_boxplot(aes(colour = factor(biv_filter())))
       p + theme_economist() +
         labs(title = "Bivariate Analysis",
-             colour = "Loan Flag") +
+             colour = "Loan Quality") +
         theme(axis.title.y = element_text(vjust = 2.5),
               axis.text.x = element_text(angle = 60,
                                          vjust = 0.5))
@@ -302,7 +302,7 @@ bivar <- function(input, output) {
         scale_color_manual(values = color_sch)
       p + theme_economist() +
         labs(title = "Bivariate Analysis",
-             colour = "Loan Flag") +
+             colour = "Loan Quality") +
         theme(axis.title.y = element_text(vjust = 2.5),
               axis.text.x = element_text(angle = 60,
                                          vjust = 0.5))

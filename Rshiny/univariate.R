@@ -109,7 +109,11 @@ univar <- function(input, output, session) {
   output$Univarplot <- renderPlot({
   p = ggplot(univar_data(), aes(x = .data[[input$t1_variable]])) +
       geom_bar()
-  p + theme_economist()
+  p + theme_economist() +
+  labs(title = "Univariate Analysis") +
+  theme(axis.title.y = element_text(vjust = 2.5),
+          axis.text.x = element_text(angle = 60,
+                                     vjust = 0.5))
   
   })
 

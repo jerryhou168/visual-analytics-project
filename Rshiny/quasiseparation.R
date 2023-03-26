@@ -121,7 +121,13 @@ quasicomplete <- function(input, output, session) {
   ggplot(qs_data(), aes(x = .data[[input$t5_variable]] , 
                                fill = qs_filter() )) + 
   geom_bar(bins = 20)+
-  theme_economist()
+  theme_economist()+
+  labs(title = "Quasi Complete Seperataion Check",
+           fill = "Loans Quality") +
+      theme(axis.title.y = element_text(vjust = 2.5),
+            axis.text.x = element_text(angle = 60,
+                                       vjust = 0.5))
+    
   
   })
   
