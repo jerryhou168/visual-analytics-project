@@ -1,12 +1,12 @@
 library(shiny)
 
 source("app-common.R", local = TRUE)
+source("prediction.R", local = TRUE)
 source("univariate.R", local = TRUE)
 source("bivariate.R", local = TRUE)
 source("correlation.R", local = TRUE)
 source("multicollinearity.R", local = TRUE)
 source("quasiseparation.R", local = TRUE)
-source("prediction.R", local = TRUE)
 
 #############################################################
 ### ui
