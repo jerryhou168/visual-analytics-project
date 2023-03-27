@@ -15,13 +15,13 @@ editor: visual
 
 # Univariate tab
 
-Select which datasets to be used (New Loans datasets or Repeated Loans dataset)
+Step1: Select which datasets to be used (New Loans datasets or Repeated Loans dataset)
 
-![](images/univariate%20tab%201.jpg)
+![](images/image-400908432.png)
 
-Next users have to choose which variables to be analyze under Univariate Analysis
+Step 2: Next users have to choose which variables to be analyze under Univariate Analysis
 
-![](images/univariate%20tab%202.jpg)
+![](images/image-1722033160.png)
 
 The result bar chart will show you the distributions of the loans data as per the selected variable.
 
@@ -32,3 +32,15 @@ The result bar chart will show you the distributions of the loans data as per th
 # Multi Collinearity tab
 
 # Quasi Complete Seperation tab
+
+Step1: Select which datasets to be used (New Loans datasets or Repeated Loans dataset)
+
+![](images/image-1797879577.png)
+
+Step 2: Next users have to choose which variables to be analyze to determine whether it violates the
+
+![](images/image-1797879577.png)
+
+The result will show you whether this particular variable would violate quasi complete separation issue. If it is, you will see one column / bar complete includes the majority (or total number) of one type of loan quality.
+
+For example in the above situation, Variable "level of education risk", for the high level of education risk ( for borrowers with lowest education levels), the majority of bad loans concentrated under this group, hence if user include this variable in the modelling, it may lead to overfitting and unreliable coefficient estimates.
