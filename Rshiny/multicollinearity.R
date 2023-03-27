@@ -64,12 +64,10 @@ multi <- function(input, output, session){
   })
   
   observeEvent(input$t4_loanType, {
-    print("plot_multicollinearity started at 1")
     plot_multicollinearity(input, output, session, 1, multicli_def_opts())
   })
   
   observeEvent(input$t4_variables, {
-    print("plot_multicollinearity started at 2")
     plot_multicollinearity(input, output, session, 2, NULL)
   })
 }

@@ -52,12 +52,10 @@ corr <- function(input, output, session){
   })
   
   observeEvent(input$t3_loanType, {
-    print("plot correlation started at 1")
     plot_correlation(input, output, session, 1, corr_def_opts())
   })
   
   observeEvent(input$t3_variables, {
-    print("plot correlation started at 2")
     plot_correlation(input, output, session, 2, NULL)
   })
 }

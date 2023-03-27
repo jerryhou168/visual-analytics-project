@@ -21,24 +21,28 @@ analysis_multicollinearity <- function(input, output, session, loanType, variabl
   ## 1 / 10
   test_data <- testing(data_split)
   
-  train_recipe <- data_processing_recipe(train_data, 
+  train_recipe <- data_multicollinearity_recipe(train_data, 
                                          "no_sample", 
-                                         1, 
-                                         0.95, 
+                                         0.90, 
+                                         0.90, 
                                          TRUE, 
-                                         FALSE, 
-                                         FALSE)
-  
+                                         TRUE, 
+                                         TRUE)
+  print("step1")
   normalized_train_data <- data_processing_juice(train_recipe)
+  print("step2")
   
   fit_model <- glm(good_bad_flag ~ ., family=binomial("logit"), data = normalized_train_data)
   
-  chart <- performance::check_collinearity(fit_model)
+  print("step3")
+  chart <- check_collinearity(fit_model)
   
+  print("step4")
   output$vifplot <- renderPlot({
     plot(chart)
   })
   
+  print("step5")
   output$t4_o_vif_table <- renderDataTable(chart, 
                                   options=list(
                                     title = "VIF",

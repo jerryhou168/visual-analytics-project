@@ -2,13 +2,16 @@ library(shiny)
 library(shinyjs)
 library(corrplot)
 library(ggplot2)
+library(ggcorrplot)
 library(performance)
 library(patchwork)
 library(recipes)
 library(graphics)
 library(ggthemes)
 
+
 ## prediction packages, starts
+library(see)
 library(vip)
 library(here)
 library(nnet)
@@ -27,23 +30,22 @@ library(patchwork)
 library(parsnip)
 library(graphics)
 library(ggthemes)
+library(randomForest)
+library(randomForest)
 library(tidymodels)
 library(tidyverse)
 ## prediction packages, ended
 
 
 ## import data
-
-## prediction data
-newloan_prediction_ds <- read_csv("data/latest_26Mar23/new_loans_cleaned.csv", show_col_types = FALSE)
-repeatloan_prediction_ds <- read_csv("data/latest_26Mar23/repeated_loans_cleaned.csv", show_col_types = FALSE)
-
-repeatloan_prediction_ds$pct_ontime[repeatloan_prediction_ds$pct_ontime == 0] <- 0.001
-repeatloan_prediction_ds$total_ontime[repeatloan_prediction_ds$total_ontime == 0] <- 0.001
-
-## plotting data
 newloan <- read_csv("data/latest_26Mar23/new_loans_cleaned.csv", show_col_types = FALSE)
 repeatloan <- read_csv("data/latest_26Mar23/repeated_loans_cleaned.csv", show_col_types = FALSE)
+
+repeatloan$pct_ontime[repeatloan$pct_ontime == 0] <- 0.001
+repeatloan$total_ontime[repeatloan$total_ontime == 0] <- 0.001
+
+newloan_prediction_ds <- newloan
+repeatloan_prediction_ds <- repeatloan
 
 ## variables
 newloan_factors <- c(
