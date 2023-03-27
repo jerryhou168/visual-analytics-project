@@ -1,120 +1,63 @@
 # Define the control panel on the left
-t3_loanType <- selectInput(inputId = "t3_loanType", 
-                           label = "Type of Loans",
-                           choices = c("New Loan" = "S",
-                                       "Repeat Loan" = "R"),
-                           selected = "S")
+source("./correlation/r_correlation.R", local = TRUE)
 
-# Define the variables to be studied in this tab
-newloan_options <- setNames(newloan_factors, 
-                            newloan_factors)
+t3_ui_loanType <- radioButtons(inputId = "t3_loanType", 
+                               label = "Type of Loans",
+                               choices = c("New Loan" = "S",
+                                           "Repeat Loan" = "R"),
+                               selected = "S", inline = TRUE)
 
-repeatloan_options <- setNames(repeatloan_factors, 
-                               repeatloan_factors)
-
-
-
-t3_variable <- uiOutput(outputId = "Corr_Variables")
-
-
-
-
+t3_ui_variable <- uiOutput(outputId = "t3_o_variables")
 
 correlation_nav <- fluidRow(
-  t3_loanType,
-  t3_variable
-  
+  t3_ui_loanType,
+  t3_ui_variable
 )
 
 
 correlation_main <-fluidRow(
-  plotOutput(outputId = "Corrplot",
-             width = "100%",
-             height = 400)
+  fluidRow(
+    column(12,
+           plotOutput(outputId = "corrplot1",
+                      width = "100%",
+                      height = 600)
+    )
+  )
 )
 
-
-corr <- function(input, output){
+corr <- function(input, output, session){
   
-  corr_opt <- reactive({
+  corr_opts <- reactive({
     if (input$t3_loanType == "S") {
-      corr_choices <- c("approval_duration",
-                        "totaldue",
-                        "age_at_loan")
+      return(newloan_factor_options)
     } else {
-      corr_choices <- c("pct_ontime",
-                        "total_ontime",
-                        "max_active_of_loans",
-                        "max_approval_duration",
-                        "max_age_at_loan",
-                        "avg_age_at_loan",
-                        "total_num_of_loans",
-                        "total_approval_duration",
-                        "mean_approval_duration",
-                        "totaldue")
+      return(repeatloan_factor_options)
     }
-  })  
-  
-  output$Corr_Variables <- renderUI({
-    selectInput(inputId = "Corr_Variables",
-                label = "Select variables from below",
-                choices = corr_opt(),
-                multiple = TRUE)
   })
   
-  
-   
-  corr_data <- reactive({
+  corr_def_opts <- reactive({
     if (input$t3_loanType == "S") {
-      return(newloan)
+      return(c("age_at_loan","age_at_loan_25th_pctile", "approval_duration_group"))
     } else {
-      return(repeatloan)
+      return(c("avg_age_at_loan","bank_account_type", "bank_name_clients"))
     }
   })
-
   
-  panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...){
-    # usr <- par("usr")
-    # on.exit(par(usr))
-    r <- abs(cor(x, y, use = "complete.obs"))
-    txt <- format(c(r, 0.123456789),
-                  digits = digits)[1]
-    col <- ifelse(r > 0.8, "aquamarine2", "brown2")
-    # set color based on correlation value
-    txt <- paste(prefix, txt, sep = "")
-    if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
-    text(0.5,
-         0.5,
-         txt,
-         cex = cex.cor * (1 + r) /2,
-         col = col)
-  }
-  
-  
-  # Correlation plot  
-  output$Corrplot <- renderPlot({
-    # To check if inputs are available before generation of plots
-    req(input$t3_loanType)
-    # To display warning message when less than two variables are chosen
-    if (length(input$Corr_Variables) < 2){
-      plot.new()
-      text(x = 0.5,
-           y = 0.5,
-           labels = "Select two or more variables for the correlation plot",
-           col = "red",
-           cex = 1.5)
-      return(NULL)
-    } else {
-      var_data <- corr_data()[, input$Corr_Variables]
-      
-      cor_data <- cor(var_data)
-      par(usr = c(0, 1, 0, 1))
-      
-      # Using corrplot from corrplot library
-      pairs(cor_data,
-            upper.panel = panel.cor,
-            lower.panel = NULL)
-    }
+  output$t3_o_variables <- renderUI({
+    checkboxGroupInput(inputId = "t3_variables", 
+                       label = "Variables",
+                       choices = corr_opts(),
+                       selected = corr_def_opts(), 
+                       inline = FALSE)
   })
-
+  
+  observeEvent(input$t3_loanType, {
+    print("plot correlation started at 1")
+    plot_correlation(input, output, session, 1, corr_def_opts())
+  })
+  
+  observeEvent(input$t3_variables, {
+    print("plot correlation started at 2")
+    plot_correlation(input, output, session, 2, NULL)
+  })
 }

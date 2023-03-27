@@ -35,17 +35,9 @@ analysis_multicollinearity <- function(input, output, session, loanType, variabl
   
   chart <- performance::check_collinearity(fit_model)
   
-  print(chart)
-  
-  print(chart$table)
-  
   output$vifplot <- renderPlot({
     plot(chart)
   })
-  
-  #output$vifplot <- renderPlot({
-  #  pairs(normalized_train_data)
-  #})
   
   output$t4_o_vif_table <- renderDataTable(chart, 
                                   options=list(

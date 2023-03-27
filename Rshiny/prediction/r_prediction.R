@@ -59,10 +59,10 @@ common_predicting <- function(input, output, session, alg, container){
   ldp_data <- reactive({
     tgt <- c(Global_Prediction_TGT_Flag, pdl)
     if (typ == "R") {
-      seleted_data1 <- repeatloan[tgt]
+      seleted_data1 <- repeatloan_prediction_ds[tgt]
       return(seleted_data1)
     }else{
-      seleted_data2 <- newloan[tgt]
+      seleted_data2 <- newloan_prediction_ds[tgt]
       return(seleted_data2)
     }
   })

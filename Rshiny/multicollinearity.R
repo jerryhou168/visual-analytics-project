@@ -1,11 +1,11 @@
 # Define the control panel on the left
 source("./multicollinearity/r_multicollinearity.R", local = TRUE)
 
-t4_ui_loanType <- selectInput(inputId = "t4_loanType", 
+t4_ui_loanType <- radioButtons(inputId = "t4_loanType", 
                            label = "Type of Loans",
                            choices = c("New Loan" = "S",
                                        "Repeat Loan" = "R"),
-                           selected = "S")
+                           selected = "S", inline = TRUE)
 
 t4_ui_variable <- uiOutput(outputId = "t4_o_variables")
 
@@ -22,7 +22,7 @@ multicollinearity_main <-fluidRow(
     column(12,
            plotOutput(outputId = "vifplot",
                       width = "100%",
-                      height = 500)
+                      height = 600)
     )
   )
   ,
@@ -41,17 +41,17 @@ multi <- function(input, output, session){
   
   multicli_opts <- reactive({
     if (input$t4_loanType == "S") {
-      return(newloan_factors)
+      return(newloan_factor_options)
     } else {
-      return(repeatloan_factors)
+      return(repeatloan_factor_options)
     }
   })
   
   multicli_def_opts <- reactive({
     if (input$t4_loanType == "S") {
-      return(c("age_at_loan","bank_account_type", "credit_rating"))
+      return(c("age_at_loan","age_at_loan_25th_pctile", "approval_duration_group"))
     } else {
-      return(c("pct_ontime","avg_age_at_loan", "max_approval_duration"))
+      return(c("avg_age_at_loan","bank_account_type", "bank_name_clients"))
     }
   })
   

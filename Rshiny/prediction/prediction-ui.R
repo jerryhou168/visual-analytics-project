@@ -111,9 +111,9 @@ prediction_parameter_loading <- function(input, output, session){
   
   predictors_opts <- reactive({
     if (input$t0_loanType == "S") {
-      return(newloan_factors)
+      return(newloan_factor_options)
     } else {
-      return(repeatloan_factors)
+      return(repeatloan_factor_options)
     }
   })
   

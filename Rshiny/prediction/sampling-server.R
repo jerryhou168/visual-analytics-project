@@ -32,9 +32,9 @@ sampling <- function(input, output, session){
   
   drs_data <- reactive({
     if (typ == "R") {
-      return(repeatloan)
+      return(repeatloan_prediction_ds)
     }else{
-      return(newloan)
+      return(newloan_prediction_ds)
     }
   })
   

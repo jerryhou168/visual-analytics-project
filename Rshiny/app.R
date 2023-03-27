@@ -1,4 +1,5 @@
 library(shiny)
+library(shinythemes)
 
 source("app-common.R", local = TRUE)
 source("prediction.R", local = TRUE)
@@ -13,64 +14,75 @@ source("quasiseparation.R", local = TRUE)
 #############################################################
 ui <- fluidPage(
   useShinyjs(),
+  theme = shinytheme("united"),
   tabsetPanel(
     id = "tabs",
-    tabPanel("univariate",
+    tabPanel("Univariate",
              sidebarLayout(
                sidebarPanel(
-                 univariate_nav
+                 univariate_nav,
+                 width = 3
                ),
                mainPanel(
-                 univariate_main
+                 univariate_main,
+                 width = 9
                )
              ),
              id = "t1"
     ),
-    tabPanel("bivariate",
+    tabPanel("Bivariate",
              sidebarLayout(
                sidebarPanel(
-                 bivariate_nav
+                 bivariate_nav,
+                 width = 3
                ),
                mainPanel(
-                 bivariate_main
+                 bivariate_main,
+                 width = 9
                )
              ),
              id = "t2"
     ),
-    tabPanel("correlation",
+    tabPanel("Correlation",
              sidebarLayout(
                sidebarPanel(
-                 correlation_nav
+                 correlation_nav,
+                 width = 3
                ),
                mainPanel(
-                 correlation_main
+                 correlation_main,
+                 width = 9
                )
              ),
              id = "t3"
     ),
-    tabPanel("multicollinearity",
+    tabPanel("Multicollinearity",
              sidebarLayout(
                sidebarPanel(
-                 multicollinearity_nav
+                 multicollinearity_nav,
+                 width = 3
                ),
                mainPanel(
-                 multicollinearity_main
+                 multicollinearity_main,
+                 width = 9
                )
              ),
              id = "t4"
     ),
-    tabPanel("quasi-Complete Separation",
+    tabPanel("Quasi-Complete Separation",
              sidebarLayout(
                sidebarPanel(
-                 quasiseparation_nav
+                 quasiseparation_nav,
+                 width = 3
                ),
                mainPanel(
-                 quasiseparation_main
+                 quasiseparation_main,
+                 width = 9
                )
              ),
              id = "t5"
     ),
-    tabPanel("loan Default Prediction",
+    tabPanel("Loan Default Prediction",
              sidebarLayout(
                fluid = TRUE,
                sidebarPanel(
@@ -84,7 +96,8 @@ ui <- fluidPage(
              ),
              id = "t6"
     )
-  )
+  ),
+  shinythemes::themeSelector()
 )
 
 #############################################################
@@ -95,8 +108,8 @@ application <- function(input, output, session) {
   ## for prediction page
   univar(input, output, session)
   prediction(input, output, session)
-  bivar(input, output)
-  corr(input, output)
+  bivar(input, output, session)
+  corr(input, output, session)
   quasicomplete(input, output, session)
   multi(input, output, session)
 
@@ -104,7 +117,10 @@ application <- function(input, output, session) {
 
 server <- function(input, output, session) {
   tryCatch(application(input, output, session),
-           error = function(c) print(paste0('error details', c))
+           error = function(c) {
+               print(c)
+               print(paste0('error details', c))
+             }
   )
 }
 

@@ -33,40 +33,87 @@ library(tidyverse)
 
 
 ## import data
-newloan <- read_csv("data/latest_26Mar23/new_loans_cleaned.csv", 
-                    show_col_types = FALSE)
 
-repeatloan <- read_csv("data/latest_26Mar23/repeated_loans_cleaned.csv", 
-                       show_col_types = FALSE)
+## prediction data
+newloan_prediction_ds <- read_csv("data/latest_26Mar23/new_loans_cleaned.csv", show_col_types = FALSE)
+repeatloan_prediction_ds <- read_csv("data/latest_26Mar23/repeated_loans_cleaned.csv", show_col_types = FALSE)
 
-repeatloan$pct_ontime[repeatloan$pct_ontime == 0] <- 0.01
-repeatloan$total_ontime[repeatloan$total_ontime == 0] <- 0.01
+repeatloan_prediction_ds$pct_ontime[repeatloan_prediction_ds$pct_ontime == 0] <- 0.001
+repeatloan_prediction_ds$total_ontime[repeatloan_prediction_ds$total_ontime == 0] <- 0.001
+
+## plotting data
+newloan <- read_csv("data/latest_26Mar23/new_loans_cleaned.csv", show_col_types = FALSE)
+repeatloan <- read_csv("data/latest_26Mar23/repeated_loans_cleaned.csv", show_col_types = FALSE)
 
 ## variables
 newloan_factors <- c(
-  "bank_name_clients",
-  "approval_duration_group",
-  "age_at_loan_25th_pctile",
-  "credit_rating",
-  "employment_status_risk",
-  "level_of_education_risk",
-  "referral",
-  "bank_account_type_recode",
-  "termdays",
   "age_at_loan",
-  "bank_account_type"
+  "age_at_loan_25th_pctile",
+  "approval_duration_group",
+  "bank_account_type",
+  "bank_account_type_recode",
+  "bank_name_clients",
+  "credit_rating",
+  "level_of_education_risk",
+  "employment_status_risk",
+  "termdays",
+  "referral"
+)
+
+newloan_factorNames <- c(
+  "Age at Loan",
+  "Age at Loan 25th Pctile",
+  "Approval Duration Category",
+  "Bank Account Type",
+  "Bank Account Type Recode",
+  "Bank Name",
+  "Credit Rating",
+  "Education Level Risk Category",
+  "Employment Status Risk Category",
+  "Term Days",
+  "Referral"
 )
 
 repeatloan_factors <- c(
+  "avg_age_at_loan",
+  "bank_account_type",
+  "bank_name_clients",
   "pct_ontime",
+  "employment_status",
+  "termdays",
   "total_ontime",
   "max_active_of_loans",
-  "bank_name_clients",
   "max_age_at_loan",
-  "avg_age_at_loan",
-  "employment_status",
-  "bank_account_type",
   "total_num_of_loans",
-  "max_approval_duration",
-  "termdays"
+  "max_approval_duration"
 )
+
+repeatloan_factorNames <- c(
+  "Avg Age at Loan",
+  "Bank Account Type",
+  "Bank Name",
+  "Due Ontime Pctile",
+  "Employment Status",
+  "Term Days",
+  "Total Due Ontime",
+  "Max Active Loans",
+  "Max Age at Loan",
+  "Total no. of Loans",
+  "Max approval Duration"
+)
+
+newloan_factor_options <- setNames(newloan_factors,
+                                   newloan_factorNames)
+
+repeatloan_factor_options <- setNames(repeatloan_factors,
+                                      repeatloan_factorNames)
+
+common_variable_name <- function(loanType, variable){
+  if(loanType == 'S'){
+    var_index <- which(newloan_factors == variable)
+    return(newloan_factorNames[var_index])
+  }else{
+    var_index <- which(repeatloan_factors == variable)
+    return(repeatloan_factorNames[var_index])
+  }
+}
