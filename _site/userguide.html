@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 27, 2023</p>
+      <p class="date-modified">March 28, 2023</p>
     </div>
   </div>
     
@@ -154,23 +154,42 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="univariate-tab" class="level1">
 <h1>Univariate tab</h1>
-<p>Select which datasets to be used (New Loans datasets or Repeated Loans dataset)</p>
-<p><img src="images/univariate tab 1.jpg" class="img-fluid"></p>
-<p>Next users have to choose which variables to be analyze under Univariate Analysis</p>
-<p><img src="images/univariate tab 2.jpg" class="img-fluid"></p>
+<p>Step1: Select which datasets to be used (New Loans datasets or Repeated Loans dataset)</p>
+<p><img src="images/image-400908432.png" class="img-fluid"></p>
+<p>Step 2: Next users have to choose which variables to be analyze under Univariate Analysis</p>
+<p><img src="images/image-1722033160.png" class="img-fluid"></p>
 <p>The result bar chart will show you the distributions of the loans data as per the selected variable.</p>
 </section>
 <section id="bivariate-tab" class="level1">
 <h1>Bivariate tab</h1>
+<p>Step 1: Select which datasets to be used (New Loans datasets or Repeated Loans dataset).</p>
+<p>Step 2: Choose variables X and Y to analyze if there is any concurrent relation between two variables.</p>
+<p><img src="images/Bivariate.png" class="img-fluid"> The plot on the right could be either a box-plot, scatter plot or Mosaic plot depends on whether variables chosen are continuous or categorical variables.</p>
 </section>
 <section id="correlation-tab" class="level1">
 <h1>Correlation tab</h1>
+<p>Step 1: Select which datasets to be used (New Loans datasets or Repeated Loans dataset).</p>
+<p>Step 2: Choose variables that you would like to analyze their correlations in between. Take note that at least two variables have to be chosen in order to display a proper correlation pairwise plot.</p>
+<p><img src="images/Correlation.png" class="img-fluid"></p>
+<p>A color legend would show up on the right. Green color signifies positive correlation and orange color represents negative correlation while the brightness translates the degree of correlation into visual representation.</p>
+<p>A significance test is also performed on all correlation between pairs of variables. A cross-mark would be displayed if the two paired variables produces a non-significant result.</p>
 </section>
 <section id="multi-collinearity-tab" class="level1">
 <h1>Multi Collinearity tab</h1>
+<p>Step 1: Select which datasets to be used (New Loans datasets or Repeated Loans dataset).</p>
+<p>Step 2: Choose variables that you would like to conduct multicollinearity study with. Take note that at least two variables have to be chosen in order to display a proper multicollinearity study.</p>
+<p><img src="images/MultiCollinearity.png" class="img-fluid"></p>
+<p>A VIF value equal to 1 represents that variables chosen are not correlated. For VIF values fall within 1 to 5 (green area), it means variables chosen are moderately correlated. For VIF values fall within 5 to 10 (blue area), it means variables chosen are highly correlated.</p>
+<p>A table that comes along with multicollinearity would be produced at the bottom with values Variance Inflation Factor (VIF) as well as some of its associated statistical values like upper and lower confidence interval.</p>
 </section>
 <section id="quasi-complete-seperation-tab" class="level1">
 <h1>Quasi Complete Seperation tab</h1>
+<p>Step1: Select which datasets to be used (New Loans datasets or Repeated Loans dataset)</p>
+<p><img src="images/image-1797879577.png" class="img-fluid"></p>
+<p>Step 2: Next users have to choose which variables to be analyze to determine whether it violates the</p>
+<p><img src="images/image-1797879577.png" class="img-fluid"></p>
+<p>The result will show you whether this particular variable would violate quasi complete separation issue. If it is, you will see one column / bar complete includes the majority (or total number) of one type of loan quality.</p>
+<p>For example in the above situation, Variable “level of education risk”, for the high level of education risk ( for borrowers with lowest education levels), the majority of bad loans concentrated under this group, hence if user include this variable in the modelling, it may lead to overfitting and unreliable coefficient estimates.</p>
 
 
 </section>
