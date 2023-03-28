@@ -1,5 +1,5 @@
 
-bivariate_color_sch <- c("#75D5D7", "skyblue", "lightblue")
+bivariate_color_sch <- c("#E3120B", "skyblue", "lightblue")
 
 renderBivariateMosaicplot <- function(input, output, session, ds, x, y, xl, yl) {
   
