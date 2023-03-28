@@ -39,7 +39,10 @@ analysis_multicollinearity <- function(input, output, session, loanType, variabl
   
   print("step4")
   output$vifplot <- renderPlot({
-    plot(chart)
+    plot(chart) +
+      theme(axis.title.y = element_text(vjust = 2.5),
+            axis.text.x = element_text(angle = 60,
+                                       vjust = 0.5))
   })
   
   print("step5")
