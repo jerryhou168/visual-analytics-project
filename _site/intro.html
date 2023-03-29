@@ -2,14 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="G5 - Hoang Huy, Li Ziyi, Hou Tao">
-<meta name="dcterms.date" content="2023-01-31">
+<meta name="author" content="Hoang Huy, Li Ziyi, Hou Tao">
 
-<title>ISSS608-VAA-Project - Introduction</title>
+<title>LOAN DEFAULT PREDICTION - Storyboard - Loan Default Prediction in Nigeria</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -42,11 +40,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -65,54 +63,11 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">ISSS608-VAA-Project</span>
-    </a>
-  </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text">HOME</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./intro.html" aria-current="page">
- <span class="menu-text">INTRODUCTION</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./story.html">
- <span class="menu-text">STORY</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./rshiny.html">
- <span class="menu-text">RSHINY APP</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./userguide.html">
- <span class="menu-text">User Guide</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./poster.html">
- <span class="menu-text">POSTER</span></a>
-  </li>  
-</ul>
-              <div id="quarto-search" class="" title="Search"></div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -120,9 +75,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul>
-  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem">Problem</a></li>
-  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
+  <li><a href="#r-shiny-app" id="toc-r-shiny-app" class="nav-link" data-scroll-target="#r-shiny-app">R-Shiny App</a>
+  <ul class="collapse">
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data Exploration</a></li>
+  <li><a href="#deep-data-analysis" id="toc-deep-data-analysis" class="nav-link" data-scroll-target="#deep-data-analysis">Deep Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#multi-collinearity-curse" id="toc-multi-collinearity-curse" class="nav-link" data-scroll-target="#multi-collinearity-curse">Multi-Collinearity Curse</a></li>
+  <li><a href="#quasi-complete-separation" id="toc-quasi-complete-separation" class="nav-link" data-scroll-target="#quasi-complete-separation">Quasi Complete Separation</a></li>
+  </ul></li>
+  <li><a href="#loan-default-prediction" id="toc-loan-default-prediction" class="nav-link" data-scroll-target="#loan-default-prediction">Loan Default Prediction</a>
+  <ul class="collapse">
+  <li><a href="#framework" id="toc-framework" class="nav-link" data-scroll-target="#framework">Framework</a></li>
+  <li><a href="#predictors" id="toc-predictors" class="nav-link" data-scroll-target="#predictors">Predictors</a></li>
+  <li><a href="#algorithms" id="toc-algorithms" class="nav-link" data-scroll-target="#algorithms">Algorithms</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -131,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title">Storyboard - Loan Default Prediction in Nigeria</h1>
 </div>
 
 
@@ -141,21 +112,15 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>G5 - Hoang Huy, Li Ziyi, Hou Tao </p>
+             <p>Hoang Huy, Li Ziyi, Hou Tao </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 31, 2023</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 28, 2023</p>
+      <p class="date-modified">March 29, 2023</p>
     </div>
   </div>
     
@@ -164,20 +129,177 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="images/intro1.jpg" class="img-fluid"></p>
-<section id="problem" class="level1">
-<h1>Problem</h1>
-<p>Loan lending is one of the most important financial services. Loan default risk assessment is part of the loan lending process; it does impact the profitability of financial institutions when the loan receiver is unable to pay back on time. Customers’ ability to pay back and willingness to pay back are essential considerations in loan lending.</p>
+<p><a href="https://zindi.africa/competitions/data-science-nigeria-challenge-1-loan-default-prediction/" class="external" target="_blank"><strong><em>Loan Default Prediction Challenge</em></strong></a></p>
+<p>Loan default prediction through data exploration, analysis and prediction using advanced R technologies</p>
+<p>Group 5</p>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>Loan lending offers substantial profits, but also carries the risk of customers failing to repay loans on time, known as loan default risk, which is a type of credit risk.</p>
+<p>To manage uncertainty, lending institutions have established lending standards and created predictive models to better evaluate the likelihood of loan repayment through credit risk assessment of customers.</p>
+<p>Over the past thirty years, loan default risk assessment has progressed from traditional credit scoring systems to data modeling utilizing data analytics and machine learning techniques.</p>
 </section>
-<section id="challenges" class="level1">
-<h1>Challenges</h1>
-<p>Beside the difficulty and accuracy of customer loan default prediction in real words, more than often, imbalanced data collected are also have significant impact on customer loan default prediction, imbalanced data can resulted in poor performance with traditional predictive models and evaluation metrics that assume a balanced class distribution.</p>
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
+<p>This project aims to explore R technologies to develop reusable solutions (such as R-shiny application), to support users to perform data exploration, analysis, and prediction from set of customer variables to select the optimal variables to perform the customer loan default prediction.</p>
 </section>
-<section id="solutions" class="level1">
-<h1>Solutions</h1>
-<p>In this project, first, two types of loans 1) new and 2) repeating loans together with customer demographics and loan history are used in this study to analyze customers’ ability to pay and willingness to pay, and predictive models are provided to evaluate factors selected on compared customer loan default prediction.</p>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>The data that we are using, is from Data Science Nigeria Challenge #1: Loan Default Prediction.</p>
+<p>There are two types of risk models in general:</p>
+<ul>
+<li><p>1st new business risk, which would be used to assess the risk of application(s) associated with the first loan that he/she applies.</p></li>
+<li><p>2nd repeat or behavior risk model, in which case the customer has been a client and applies for a repeat loan.</p></li>
+</ul>
+<p>Overall, we can split the data into 2 main subsets of data: For Single Loans or Repeat Loans based on number of loans per customer in the data.</p>
+</section>
+<section id="approach" class="level1">
+<h1>Approach</h1>
+<p>To effectively predict the customer loan default, this study aims to provide following approaches to explore, analysis, mining factors are important to evaluate loan default.</p>
+<ul>
+<li>Loan default factor exploration: it provides visualization on all or selected factors, to allow users to understand the trends of the variables, correlation of variables between each other.</li>
+<li>Loan default factor mining: it provides deep dive analysis for customer further analysis the importance of loan default factors for prediction.</li>
+<li>Loan default prediction: it provides interfaces for users to select variables, sampling methods, and predictive algorithms to model and analyze factors for customer loan default prediction.</li>
+</ul>
+</section>
+<section id="r-shiny-app" class="level1">
+<h1>R-Shiny App</h1>
+<section id="data-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
+<p>This is the first part of the R-Shiny application where users can perform Exploratory Data Analysis on this dataset, with the more common tools such as Distribution Analysis , Deviation Analysis and Scatterplot.</p>
+<p>Distribution analysis is a statistical technique used to assess the symmetry and shape of a dataset. It involves examining the frequency distribution of a predictor variable to identify whether the data is normally distributed or skewed. If a variable is found to be highly skewed, this can impact the accuracy and reliability of statistical models, and may require data transformation or specialized modeling techniques.</p>
+<p>Example:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prototype-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Another tool can be employed is Deviation Analysis (box plot). Deviation analysis, often performed through box plots, is a graphical technique used to examine the relationship between a categorical predictor variable and a continuous variable. It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.</p>
+<p>Example:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prototype-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Another type of analysis between 2 continuous variables is a scatterplot.</p>
+<p>A scatterplot is a graphical tool used to visualize the relationship between two continuous variables. Each point on the plot represents a combination of values for the two variables, and the pattern of points can reveal the direction, strength, and form of the correlation between the variables. Scatterplots can aid in identifying potential associations between variables and provide insights into the nature of the relationship, which can inform subsequent analyses or hypotheses.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prototype-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="deep-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="deep-data-analysis">Deep Data Analysis</h2>
+<p>The second section of the R-shiny apps would provide users options to experiment with other analysis types such as Multi-collinearity test and Quasi Complete Separation to identify which variables should be include or exclude when building Classification model to predict credit frauds from our data.</p>
+<section id="multi-collinearity-curse" class="level3">
+<h3 class="anchored" data-anchor-id="multi-collinearity-curse">Multi-Collinearity Curse</h3>
+<p>Multicollinearity refers to the situation in which two or more predictor variables in a machine learning model are highly correlated with each other, making it difficult to identify the independent effects of each variable on the dependent variable.</p>
+<p>In a classification model, multicollinearity can lead to unstable and unreliable estimates of the coefficients and make it difficult to interpret the model’s results. It can also lead to overfitting and reduce the model’s predictive accuracy. To address multicollinearity, one can exclude the highly correlated variables when building classification model</p>
+<p>To determine whether multiple variables are in danger of compromising the model by this issue, we can utilize a correlation matrix.</p>
+<p>A correlation matrix is a tool that can be used to identify multicollinearity by showing the pairwise correlations between each pair of predictor variables in the model. The correlation coefficient ranges from -1 to 1, where -1 indicates a perfect negative correlation (when one variable increases, the other decreases) and 1 indicates a perfect positive correlation (when one variable increases, the other increases).</p>
+<p>In the context of multicollinearity, a high correlation coefficient (close to 1 or -1) between two predictor variables indicates a strong linear relationship between them. This means that one variable can be predicted well by the other, and it becomes difficult to disentangle the effects of the two variables on the dependent variable. It’s important to note that correlation doesn’t imply causation, and that multicollinearity can also occur between three or more predictor variables, not just pairs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prototype-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="quasi-complete-separation" class="level3">
+<h3 class="anchored" data-anchor-id="quasi-complete-separation">Quasi Complete Separation</h3>
+<p>Another issue that our Shiny Apps can allow our users to explore, is the problem with quasi complete separation. Quasi-complete separation is a situation that can occur in classification when a predictor variable perfectly separates the outcome variable into distinct categories.</p>
+<p>In other words, when a predictor variable has a perfect linear relationship with the outcome variable, the logistic regression model can perfectly predict which category the outcome variable belongs to based on the value of the predictor variable. This means that the estimated coefficient for the predictor variable becomes infinitely large.</p>
+<p>Quasi-complete separation is particularly problematic in small or moderate-sized datasets because it can lead to overfitting and unreliable coefficient estimates. In addition, the model’s performance can be sensitive to small changes in the data, which can make it difficult to interpret the results.</p>
+<p>To address quasi-complete separation, there are several approaches that can be taken. One approach is to remove the problematic predictor variable or combine it with other variables to reduce its impact.</p>
+<p>In some cases, quasi-complete separation may be a real phenomenon in the data and may require a different approach altogether. For example, if the data has a natural threshold or cutoff point, such as in medical diagnosis or credit scoring, the logistic regression model may need to be modified to account for this threshold. Overall, it’s important to be aware of quasi-complete separation and to use appropriate methods to address it when it occurs.</p>
+<p>One method of visual analytics to determine whether a predictor variable has the problem of quasi complete separation is by scatterplot. Quasi-complete separation can be visualized using a scatterplot, which can help to identify the problematic predictor variable and understand its relationship with the outcome variable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prototype-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>In a barchar, the predictor variable is plotted on the x-axis and the outcome variable is plotted and stacked on the y-axis. When there is quasi-complete separation, we typically see that the data points fall into two distinct groups or clusters, with no overlap between the two groups.</p>
+</section>
+</section>
+<section id="loan-default-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="loan-default-prediction">Loan Default Prediction</h2>
+<p>Upon analyzed variables identified for loan default prediction, next step is prediction. this study make use of Tidymodels library in R for prediction.</p>
+<section id="framework" class="level3">
+<h3 class="anchored" data-anchor-id="framework">Framework</h3>
+<p>The tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles.</p>
+<ol type="1">
+<li><p><strong><em>rsample</em></strong> : The rsample package provides functions to create different types of resamples and corresponding variables selected for prediction.</p></li>
+<li><p><strong><em>parsnip</em></strong>: The goal of parsnip is to provide a tidy, unified interface to models in loan default prediction.</p></li>
+<li><p><strong><em>recipes</em></strong>: Recipe to preprocessing data for loan default procession.</p></li>
+<li><p><strong><em>yardstick</em></strong>: Yardstick is a package to estimate how well models are working using tidy data principles.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prototype-6.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="predictors" class="level3">
+<h3 class="anchored" data-anchor-id="predictors">Predictors</h3>
+<p>The UI provides two different loan prediction - New Loan and Repeat Loan. New loan is aim to provide prediction loan default for new customers based on various variables selected, while Repeat Loan is aim to provide prediction for existing customers based on various variables selected.</p>
+<p><strong>Variables for New customers:</strong></p>
+<ol type="1">
+<li><em>bank_name_clients</em> : bank name</li>
+<li><em>approval_duration_group</em> : approval duration grouping</li>
+<li><em>age_at_loan_25th_pctile</em> : age at loan approval of 25th percentile</li>
+<li><em>credit_rating</em> : borrower credict rating</li>
+<li><em>termdays</em> : duration of loan</li>
+<li><em>employment_status_risk</em> : employment status of borrower</li>
+<li><em>level_of_education_risk</em> : education risk of borrower</li>
+<li><em>referral</em> : referral</li>
+<li><em>bank_account_type_recode</em> : bank account type</li>
+<li><em>loanamount_group</em> : loan amount grouping</li>
+<li><em>approval_duration</em> : approval duration</li>
+<li><em>loanamount</em> : loan amount</li>
+<li><em>totaldue</em> : total amount due of the loan</li>
+<li><em>Interestrate</em> : interest rate of loan (x100)</li>
+<li><em>age_at_loan</em> : age at the loan borrowed</li>
+<li><em>bank_account_type</em> : bank account type</li>
+</ol>
+<p><strong>Variables for Existing customers:</strong></p>
+<ol type="1">
+<li><em>pct_ontime</em> : loan due one time percentile</li>
+<li><em>total_ontime</em> : total no. of times loan due on time</li>
+<li><em>max_active_of_loans</em> : maximum active loan borrowed</li>
+<li><em>max_approval_duration</em> : maximum loan approval duration</li>
+<li><em>bank_name_clients</em> : bank name of the loan borrowed</li>
+<li><em>max_age_at_loan</em> : max age among all loan borrowed</li>
+<li><em>avg_age_at_loan</em> : age age among all loan borrowed</li>
+<li><em>employment_status</em> : employment status</li>
+<li><em>bank_account_type</em> : bank account type</li>
+<li><em>total_referrals</em> : total referrals of borrowed</li>
+<li><em>avg_num_of_loans</em> : average number of loan borrowed</li>
+<li><em>total_num_of_loans</em> : total number of loan borrowed</li>
+<li><em>total_approval_duration</em> : total approval duration of all loans</li>
+<li><em>mean_approval_duration</em> : average approval duration of all loans</li>
+<li><em>max_interest_rate</em> : max interest rate</li>
+<li><em>mean_interest_rate</em> : averahe interest rate</li>
+<li><em>mean_referrals</em> : average referrals</li>
+<li><em>max_churn_flag</em> : maximum loan due on time</li>
+<li><em>mean_churn_flag</em> : average loan due on time</li>
+<li><em>loannumber</em> : loan number</li>
+<li><em>loanamount</em> : loan amount</li>
+<li><em>totaldue</em> : total amount due of the loan</li>
+<li><em>termdays</em> : loan duration</li>
+</ol>
+</section>
+<section id="algorithms" class="level3">
+<h3 class="anchored" data-anchor-id="algorithms">Algorithms</h3>
+<p>It also can use different prediction algorithms to achieve better loan default prediction accuracy based on loan type and various variables selected.</p>
+<ol type="1">
+<li><p>Nominal Logistic Regression</p></li>
+<li><p>Fit Stepwise -Boosted Tree</p></li>
+<li><p>Bootstrap Forest</p></li>
+</ol>
+<p>The UI will enable interactive loan default prediction by selecting various variables and machine learning algorithms.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

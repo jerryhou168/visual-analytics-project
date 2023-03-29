@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>ISSS608 Visual Analytics and Applications</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <div class="sub-header">
+      <div class="container">
+        <div class="row">
+          <div>
+            <ul class="left-info">
+              <span style="color:white">ISSS608 VAA Group Project</span>
+            </ul>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><h2></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="introduction.html">Introduction
+                  <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="poster.html">Poster</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shinyapp.html">ShinyApp</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="guide.html">User Guide</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Loan Default Predictive Analysis & Visualization App</h1>
+            <span></span>
+          </div>
+        </div>
+		<div><br/></div>
+		<div class="row">
+          <div class="col-md-12">
+            <h5>Group 5:  Hoang Huy, Hou Tao, Li Ziyi</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="single-services">
+      <div class="container">
+        <div class="row" id="tabs">
+          <div class="col-md-4">
+            <ul>
+              <li><a href='#tabs-1'>Overview of Variables<i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-2'>Univariate Analysis<i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-3'>Bivariate Analysis<i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-4'>Correlation Analysis<i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-5'>Multicollinearity Analysis<i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-6'>Quasi-Complete Separation<i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-7'>Loan Default Prediction<i class="fa fa-angle-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <section class='tabs-content'>
+			
+			  <article id='tabs-1'>
+                <img src="assets/images/single_service_02.jpg" alt="">
+                <h4>Overview of Variables</h4>
+                <div>
+				<p>In this project, two different type of loan (<b>new loan</b> and <b>repeat laon</b>) data for customer loan default analysis.</p>
+				<p><b>New loan</b> data is prepared for customer loan default analyzing for new customers based on variables identified more relative to new customers. </p>
+				<p><b>Repeat Loan</b> data is prepared for customer loan default analyzing for existing customers who have multiple loan history with the bank, the variables identified more relative to existing customers.</p>
+				<p>The tables below provided more details on each variables used in this project</p>
+				
+				<p><br/></p>
+				<p><h4><span>Table 1: New Loan Variables</span></h4><hr/></p>
+				<table style="width:100%">
+					<tr>
+						<th style="width:40%">Variable Name</th>
+						<th>Description</th>
+					</tr>
+					<tr><td>Age at Loan</td><td>Customer age when the loan borrowed</td></tr>
+					<tr><td>Age at Loan 25th Pctile</td><td>25th percentile of customer age at the loan borrowed vs age among all loans borrowed from the customer</td></tr>
+					<tr><td>Approval Duration Category</td><td>Approval Duration Category</td></tr>
+					<tr><td>Bank Account Type</td><td>Bank Account Type</td></tr>
+					<tr><td>Bank Account Type Recode</td><td>Recoded Bank Account Type</td></tr>
+					<tr><td>Bank Name</td><td>Bank Name of the loan borrowed by customers</td></tr>
+					<tr><td>Credit Rating</td><td>Customer Credit Rating</td></tr>
+					<tr><td>Education Level Risk Category</td><td>Risk Category of Education Level of the customer</td></tr>
+					<tr><td>Employment Status Risk Category</td><td>Risk Category of Employment Status of the customer</td></tr>
+					<tr><td>Term Days</td><td>Term days of the loan borrowed</td></tr>
+					<tr><td>Referral</td><td>Has referral when the loan was borrowed by customer</td></tr>
+
+
+					
+				</table>
+				<p><br/></p>
+				<p><h4><span>Table 2: Repeat Loan Variables</span></h4><hr/></p>
+				<table style="width:100%">
+					<tr>
+						<th style="width:40%">Variable Name</th>
+						<th>Description</th>
+					</tr>
+					<tr><td>Avg Age at Loan</td><td>Average age among all loans borrowed from the customer</td></tr>
+					<tr><td>Bank Account Type</td><td>Bank Account Type</td></tr>
+					<tr><td>Bank Name</td><td>Bank Name of the loan borrowed by customers</td></tr>
+					<tr><td>Due Ontime Pctile</td><td>Percentage of all loans due one time</td></tr>
+					<tr><td>Employment Status</td><td>Employment Status</td></tr>
+					<tr><td>Term Days</td><td>Term days of the loan borrowed</td></tr>
+					<tr><td>Total Due Ontime</td><td>Total no. of loans due one time</td></tr>
+					<tr><td>Max Active Loans</td><td>Maximum no. of active loans borrowed by the customer</td></tr>
+					<tr><td>Max Age at Loan</td><td>Max age among all loan borrowed by the csutomer</td></tr>
+					<tr><td>Total no. of Loans</td><td>Total no. of Loans</td></tr>
+					<tr><td>Max approval Duration</td><td>The longest loan approval duration</td></tr>
+
+				</table>
+				
+				</div>
+              </article>
+			  
+              <article id='tabs-2'>
+                <img src="assets/images/single_service_01.jpg" alt="">
+                <h4>Univariate Analysis</h4>
+                <div>
+				<p>
+				This is the first part of the R-Shiny application where users can perform Exploratory Data Analysis on two different loan dataset, with the more common tools such as Distribution Analysis, Deviation Analysis and Scatterplot.</p>
+				<p><br/></p>
+				<div><img src="./file/vaa/Univariate.jpg" width="100%"/></div>
+				<p><br/></p>
+				<p>
+				Univariate analysis is a statistical technique used to assess the symmetry and shape of single variable in a dataset. It involves examining the frequency distribution of a predictor variable to identify whether the data is normally distributed or skewed. </p>
+				<p><br/></p>
+				<p>If a variable is found to be highly skewed, this can impact the accuracy and reliability of statistical models, and may require data transformation or specialized modeling techniques.
+				</p>
+				
+				</div>
+              </article>
+              
+			  <article id='tabs-3'>
+                <img src="assets/images/single_service_02.jpg" alt="">
+                <h4>Bivariate Analysis</h4>
+                <div>
+				<p>1. Bivariate analysis, often performed through box plots, is a graphical technique used to examine the relationship between a qualitative  predictor variable and a continuous variable. </p>
+				<div><img src="./file/vaa/Bivariate-1.jpg" width="100%"/></div>
+				<p><br/></p>
+				<p>It provides a visual representation of the distribution of the continuous variable within each category of the predictor, and can reveal differences in variability or central tendency between groups.</p>
+				<p><br/></p>
+				<p>2. Another bivariate analysis, often performed through Scatterplot, is a graphical technique used to examine the relationship between two continuous variables. </p>
+				<div><img src="./file/vaa/Bivariate-21.jpg" width="100%"/></div>
+				<p><br/></p>
+				<p>It provides a visual representation of the correlation two continuous variables between each other and can reveal correlation or clusters between two continuous variables. This can aid in identifying potential correlations between the two predictors and inform subsequent statistical analyses.</p><p><br/></p>
+				<p><br/></p>
+				<p>3. A third bivariate analysis, often performed through mosaic plot, is a graphical technique used to examine the relationship between two qualitative  variables. </p>
+				<div><img src="./file/vaa/Bivariate-3.jpg" width="100%"/></div>
+				<p><br/></p>
+				<p>It provides a visual representation of the correlation two qualitative  variables between each other and can reveal correlation or in between two continuous variables. This can aid in identifying potential relationships between the two predictors and inform subsequent statistical analyses.</p>
+				
+				
+				</div>
+              </article>
+			  <article id='tabs-4'>
+                <img src="assets/images/single_service_02.jpg" alt="">
+                <h4>Correlation Analysis</h4>
+                <div>
+				
+				<p>A scatterplot is a graphical tool used to visualize the relationship between two continuous variables, categorical variables to be transformed into numerical variables accordingly before apply to scatterplot.</p>
+				<p><br/></p>
+				<p>
+				Each number on the plot represents the correlation between the variables. and the density of colour provide visualized view of strength of the correlation between the variables. 
+				</p>
+				<p><br/></p>
+				<div><img src="./file/vaa/Correlation.jpg" width="100%"/></div>
+				<p><br/></p>
+				<p>
+				Scatterplots can aid in identifying potential associations between variables and provide insights into the nature of the relationship, which can inform subsequent analyses or hypotheses.
+				</p>
+				
+				</div>
+              </article>
+			  <article id='tabs-5'>
+                <img src="assets/images/single_service_02.jpg" alt="">
+                <h4>Multicollinearity Analysis</h4>
+				
+				<div>
+				
+				<p>Multicollinearity refers to the situation in which two or more predictor variables in a machine learning model are highly correlated with each other, making it difficult to identify the independent effects of each variable on the dependent variable.</p>
+
+				<p>In a classification model, multicollinearity can lead to unstable and unreliable estimates of the coefficients and make it difficult to interpret the model’s results. It can also lead to overfitting and reduce the model’s predictive accuracy. 
+				
+				<p><br/></p>
+				<p>To address multicollinearity, one can exclude the highly correlated variables when building classification model. To determine whether multiple variables are in danger of compromising the model by this issue, we can utilize the variance inflation factor (VIF) analysis.</p>
+				
+				<p><br/></p>
+				<div><img src="./file/vaa/Multicollinearity.jpg" width="100%"/></div>
+				<p><br/></p>
+				
+				<p>The variance inflation factor is a measure to analyze the magnitude of multicollinearity of model terms. A VIF less than 5 indicates a low correlation of that predictor with other predictors. A value between 5 and 10 indicates a moderate correlation, while VIF values larger than 10 are a sign for high, not tolerable correlation of model predictors (James et al. 2013). </p>
+				
+				<p><br/></p>
+				<p>In the context of multicollinearity, a high correlation coefficient between two predictor variables indicates a strong linearity relationship between them. This means that one variable can be predicted well by the other, and it becomes difficult to disentangle the effects of the two variables on the dependent variable. It’s important to note that correlation doesn’t imply causation, and that multicollinearity can also occur between three or more predictor variables, not just pairs.</p>
+				
+				</div>
+				
+              </article>
+			  <article id='tabs-6'>
+                <img src="assets/images/single_service_02.jpg" alt="">
+                <h4>Quasi-Complete Separation</h4>
+				
+				
+				
+				<p>Quasi-complete separation is a situation that can occur in classification when a predictor variable perfectly separates the outcome variable into distinct categories.
+
+				<p>In other words, when a predictor variable has a perfect linear relationship with the outcome variable, the logistic regression model can perfectly predict which category the outcome variable belongs to based on the value of the predictor variable. This means that the estimated coefficient for the predictor variable becomes infinitely large.
+
+				<p><br/></p>
+				<p>For instance, the screenshot below provided that the current accunt holders having nearly zero Bad loans, so, it is necessary to collect more data for the Current account holders in terms of Bad Loan Quality data.</p>
+				<p><br/></p>
+				<div><img src="./file/vaa/Quasi-Complete-Separation2.jpg" width="100%"/></div>
+				<p><br/></p>
+				
+				<p>Quasi-complete separation is particularly problematic in small or moderate-sized datasets because it can lead to overfitting and unreliable coefficient estimates. In addition, the model’s performance can be sensitive to small changes in the data, which can make it difficult to interpret the results.</p>
+
+				<p>To address quasi-complete separation, there are several approaches that can be taken. One approach is to remove the problematic predictor variable or combine it with other variables to reduce its impact.</p>
+
+				<p>In some cases, quasi-complete separation may be a real phenomenon in the data and may require a different approach altogether. For example, if the data has a natural threshold or cutoff point, such as in medical diagnosis or credit scoring, the logistic regression model may need to be modified to account for this threshold. Overall, it’s important to be aware of quasi-complete separation and to use appropriate methods to address it when it occurs.</p>
+
+				<p>One method of visual analytics to determine whether a predictor variable has the problem of quasi complete separation is by barchart. Quasi-complete separation can be visualized using a barchart, which can help to identify the problematic predictor variable and understand its relationship with the outcome variable.</p>
+
+				<p><br/></p>
+				<div><img src="./file/vaa/Quasi-Complete-Separation1.jpg" width="100%"/></div>
+				<p><br/></p>
+				
+				<p>In a barchar, the predictor variable is plotted on the x-axis and the outcome variable is plotted and stacked on the y-axis. When there is quasi-complete separation, we typically see that the data points fall into two distinct groups or clusters, with no overlap between the two groups.</p>
+              </article>
+			  <article id='tabs-7'>
+                <img src="assets/images/single_service_02.jpg" alt="">
+                <h4>Loan Default Prediction</h4>
+				<p>
+				The predictive analysis of loan defualt prediction is using tidymodels framework, it is a collection of packages for modeling and machine learning using tidyverse. Following packages or functions are adopted in this customer loan default prediction project.</p>
+				
+				<p><br/></p>
+				<p>
+				<span style="font-size:20px; ">1.</span> <b>rsample</b> is a package provide set of functions for drawing samples and creating resamples from data, for instance, <b>initial_split</b> function from rsample is adopted to create an initial split of new loan or repea loan dataset into training and testing dataset.
+				</p>
+				
+				<p><br/></p>
+				<p>
+				<span style="font-size:20px; ">2.</span> <b>recipe</b> is a package provides a framework of stream data pre-processing before data applied for modeling for training and validation. following recipe functions are used in this project.
+				<p><br/></p>
+				<table>
+					<tr><th style="width:20%">Function</th><th>Description</th></tr>
+					<tr><td>step_log</td><td>log transform data on numeric variables</td></tr>
+					<tr><td>step_naomit</td><td>removes rows if they contain NA or NaN values</td></tr>
+					<tr><td>step_novel</td><td>onverts all nominal or categorical variables to factors</td></tr>
+					<tr><td>step_dummy</td><td>converts all nominal variables into numeric variables</td></tr>
+					<tr><td>step_nzv</td><td>potentially remove variables highly sparse and unbalanced</td></tr>
+					<tr><td>step_zv</td><td>remove variables that contain only a single value</td></tr>
+					<tr><td>step_normalize</td><td>normalizes (center and scales) the numeric variables</td></tr>
+					<tr><td>step_corr</td><td>remove predictor variables that have large correlations with other variables</td></tr>
+					<tr><td></td><td></td></tr>
+				</table>
+				</p>
+				
+				<p><br/></p>
+				<p>
+				<span style="font-size:20px; ">3.</span> <b>themis</b> is a package provides set of functions to handling missing values in data. following methods from themis package for creating oversampling on data.
+				</p>
+				<p><br/></p>
+				<table>
+					<tr><th style="width:20%">Function</th><th>Description</th></tr>
+					<tr><td>step_upsample</td><td>replicate rows of a dataset to make variables with equal occurrences</td></tr>
+					<tr><td>step_smote</td><td>generate new examples using SMOTE algorithm</td></tr>
+					<tr><td>step_rose</td><td>generate new examples using ROSE algorithm</td></tr>
+				</table>
+				</p>
+				<p><br/></p>
+				The screenshot below shown that Oversampling function are provided to generate new examples for the inbalanced data with multicollinearity issues.
+				<div><img src="./file/vaa/predictoin1.jpg" width="100%"/></div>
+				<p><br/></p>
+				The screenshot below shown that extract examples are generated in the data for loan default prediction.
+				<div><img src="./file/vaa/sampling1.jpg" width="100%"/></div>				
+				<p><br/></p>
+				
+				<p>
+				<span style="font-size:20px; ">4.</span> <b>juice</b> is a function of <b>recipe</b> to extract transformed training set estimated by prep, it return the results of a recipe where all steps are applied to the data.
+				</p>
+				<p><br/></p>
+				<p>
+				<span style="font-size:20px; ">5.</span> <b>vfold_cv</b> known as V-Fold Cross-Validation (a.k.a k-fold cross-validation), it randomly splits the data into V groups of roughly equal size (called "folds"), the cross validatoin dataset is applied to resamples in model training.
+				</p>
+				<p><br/></p>
+				The screenshot below shown that the first settings on Training/testing data splitting provided for adjust the size of training and testing dataset.
+				<div><img src="./file/vaa/predictoin3.jpg" width="100%"/></div>				
+				<p><br/></p>
+				<p>
+				<span style="font-size:20px; ">6.</span> <b>parsnip</b> providing a tidy, unified interface for models that can be used to try a range of models without concerned the differences from different model packages. In this project three main machine learning models are applied for loan default prediction.
+				<p><br/></p>
+				<table>
+					<tr><th style="width:20%">Model</th><th>Description</th></tr>
+					<tr><td>rand_forest</td><td>It creates a large no. of decision trees, each independent of the others.</td></tr>
+					<tr><td>boost_tree</td><td>It creates a series of decision trees forming an ensemble.</td></tr>
+					<tr><td>logistic_reg</td><td>It's a generalized linear model for binary outcomes.</td></tr>
+				</table>
+				</p>
+				<p><br/></p>
+				The screenshot below shown that the three different models are provided for loan default prediction, the shiny application also allow mutliple models selected together for compare the best model for loan default prediction.
+				<div><img src="./file/vaa/predictoin2.jpg" width="100%"/></div>		
+				<p><br/></p>
+				<p>
+				<span style="font-size:20px; ">7.</span> <b>workflow</b> bundle together pre-processing, cross validation, modeling and post-processing steps.
+				</p>
+				<p><br/></p>
+				<p>
+				<span style="font-size:20px; ">8.</span> <b>tune</b> last_fit function from tune package is used to perform model testing by using test dataset, finally, collect_predictions from tune package is used to obtain and format results produced by tuning functions for visualization.
+				</p>
+				<p><br/></p>
+				Below are the different results are extracted using tune package for loan default prediction results visualization.
+				<p><br/></p>
+				<p><span style="font-weight:bold;">8.1 Visualization of loan default prediction with one model selected</span></p>
+				<div><img src="./file/vaa/ps1-1.jpg" width="100%"/></div>		
+				<p><br/></p>
+				<p><span style="font-weight:bold;">8.2 Visualization of loan default prediction with two models selected</span></p>
+				<div><img src="./file/vaa/ps2-1.jpg" width="100%"/></div>	
+				<p><br/></p>
+				<p><span style="font-weight:bold;">8.3 Visualization of loan default prediction with three models selected</span></p>
+				<div><img src="./file/vaa/ps3-1.jpg" width="100%"/></div>	
+				<p><br/></p>
+				More information about Tidymodel, please click <a href="https://www.tidymodels.org/" target="_blank">here</a>.
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	<div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	</div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/accordions.js"></script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>
