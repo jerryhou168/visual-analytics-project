@@ -1194,6 +1194,9 @@ footer .contact-form button.filled-button:hover {
 .contact-information {
 	margin-top: 30px;
 }
+.poster-information {
+	margin-top: 0px;
+}
 .shinyapp-information {
 	margin-top: 30px;
 }
